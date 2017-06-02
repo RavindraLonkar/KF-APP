@@ -34,7 +34,7 @@ public class FileDumpService {
 	}
 
 	@SuppressWarnings({ "unchecked", "deprecation" })
-	public Response dumpFile(File file,String shift) {
+	public Response dumpFile(File file,String shift, String objectName) {
 		String fileContent = null;
 		List<PGR_IssueNew> pgrdata=new ArrayList<>();
 		try {
@@ -42,10 +42,9 @@ public class FileDumpService {
 			fileContent = FileUtils.readFileToString(file);
 
 			List<?> dataList = null;
-			String fileName = file.getName();
 			
-			switch (fileName) {
-				case "PGR_IssueNew.txt":
+			switch (objectName) {
+				case "PGR_IssueNew":
 					dataList = this.getModels(PGR_IssueNew.class);
 					CustomFileUtils<PGR_IssueNew> customPGR_IssueNewUtils = new CustomFileUtils<PGR_IssueNew>();
 					dataList = customPGR_IssueNewUtils.getMappedObjectList(fileContent, new PGR_IssueNew(),
@@ -57,14 +56,14 @@ public class FileDumpService {
 						pGR_IssueNew.setPi_prweek(customPGR_IssueNewUtils.getPrWeek());
 						pGR_IssueNew.setPi_prday(customPGR_IssueNewUtils.getPrDay());
 						pGR_IssueNew.setPi_pryear(customPGR_IssueNewUtils.getPrYear());
-						pGR_IssueNew.setPi_Year(customPGR_IssueNewUtils.getYear(pGR_IssueNew.getPi_Week()));
+						pGR_IssueNew.setPi_Year(customPGR_IssueNewUtils.getPrYear());
 						pGR_IssueNew.setPi_prshift(Integer.parseInt(shift));
 					}
 					
 					pgrdata= (List<PGR_IssueNew>) pGR_IssueNewRepository.save((List<PGR_IssueNew>) dataList);
 					response = new Response("sucess", pgrdata,"PGR_IssueNew");
 				break;
-				case "PIR1_SCanOpcodeIssue.txt":
+				case "PIR1_SCanOpcodeIssue":
 					dataList = this.getModels(PIR1_SCanOpcodeIssue.class);
 					CustomFileUtils<PIR1_SCanOpcodeIssue> customPIR1_SCanOpcodeIssueUtils = new CustomFileUtils<PIR1_SCanOpcodeIssue>();
 					dataList = customPIR1_SCanOpcodeIssueUtils.getMappedObjectList(fileContent, new PIR1_SCanOpcodeIssue(),
@@ -81,7 +80,7 @@ public class FileDumpService {
 					
 					pGR_IssueNewRepository.save((List<PGR_IssueNew>) dataList);
 				break;
-				case "PIR2_SCanOpcodeIssue.txt":
+				case "PIR2_SCanOpcodeIssue":
 					dataList = this.getModels(PIR2_SCanOpcodeIssue.class);
 					CustomFileUtils<PIR2_SCanOpcodeIssue> customPIR2_SCanOpcodeIssueUtils = new CustomFileUtils<PIR2_SCanOpcodeIssue>();
 					dataList = customPIR2_SCanOpcodeIssueUtils.getMappedObjectList(fileContent, new PIR2_SCanOpcodeIssue(),
@@ -98,7 +97,7 @@ public class FileDumpService {
 					
 					pGR_IssueNewRepository.save((List<PGR_IssueNew>) dataList);
 				break;
-				case "PIR3_SCanOpcodeIssue.txt":
+				case "PIR3_SCanOpcodeIssue":
 					dataList = this.getModels(PIR3_SCanOpcodeIssue.class);
 					CustomFileUtils<PIR3_SCanOpcodeIssue> customPIR3_SCanOpcodeIssueUtils = new CustomFileUtils<PIR3_SCanOpcodeIssue>();
 					dataList = customPIR3_SCanOpcodeIssueUtils.getMappedObjectList(fileContent, new PIR3_SCanOpcodeIssue(),

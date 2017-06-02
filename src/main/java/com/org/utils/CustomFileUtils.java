@@ -15,8 +15,11 @@ import com.google.gson.JsonElement;
 public class CustomFileUtils<T> {
 	
 	Calendar localCalendar = Calendar.getInstance(TimeZone.getDefault());
-	SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+	SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+	SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
+	 Date date = new Date();
 	
+	@SuppressWarnings("unchecked")
 	public List<T> getMappedObjectList(String fileContent, T object, String headerString) {
 		Map<String, String> map = null;
 		List<T> dataList = new ArrayList<T>();
@@ -44,15 +47,16 @@ public class CustomFileUtils<T> {
 	}
 	
 	public int getPrDay() {
-		return localCalendar.get(Calendar.DATE);
-	}
-	
-	public int getPrWeek() {
 		return localCalendar.get(Calendar.DAY_OF_WEEK);
 	}
 	
-	public Date getPrTime() {
-		return localCalendar.getTime();
+	public int getPrWeek() {
+		return localCalendar.get(Calendar.WEEK_OF_YEAR);
+	}
+	
+	public String getPrTime() {
+		 Date date = new Date();
+		return timeFormat.format(date);
 	}
 	
 	public String getDate() {

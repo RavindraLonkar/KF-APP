@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,40 +20,43 @@ import com.org.utils.Response;
 
 @RestController
 public class UploadPostController {
-	 
+
 	@Autowired
 	FileDumpService fileDumpService;
-	
-	Response response=new Response();
-	
-    //Save the uploaded file to this folder
-    private static String UPLOADED_FOLDER = "C:/Users/Rahul/Desktop/Ravi/upload/";
-    List<Object> objects=new ArrayList<>();
-    
- 
-    @PostMapping("/upload") // //new annotation since 4.3
-    public Response singleFileUpload(@RequestParam("file") MultipartFile file,@RequestParam("shift") String shift) {
 
-    	if (file.isEmpty()) {
-        	response = new Response("Empty file", objects,"");
-            return response;
-        }
+	@Value("${file.upload.folderpath}")
+	private String UPLOADED_FOLDER; // = "E:/project/";
 
-        try {
-            // Get the file and save it somewhere
-            byte[] bytes = file.getBytes();
-            Path path = Paths.get(UPLOADED_FOLDER + file.getOriginalFilename());
-            Files.write(path, bytes);
-            
-            if(file.getContentType() != null){
-            	response =fileDumpService.dumpFile(new File(UPLOADED_FOLDER + file.getOriginalFilename()),shift);
-            }            
+	Response response = new Response();
 
-        } catch (IOException e) {
-        	response = new Response("fail", objects,"");
-        }
+	// Save the uploaded file to this folder
 
-        return response;
-    }
- 
+	List<Object> objects = new ArrayList<>();
+
+	@PostMapping("/upload") // //new annotation since 4.3
+	public Response singleFileUpload(@RequestParam("file") MultipartFile file, @RequestParam("objectName") String objectName,
+			@RequestParam("shift") String shift) {
+
+		if (file.isEmpty()) {
+			response = new Response("Empty file", objects, "");
+			return response;
+		}
+
+		try {
+			// Get the file and save it somewhere
+			byte[] bytes = file.getBytes();
+			Path path = Paths.get(UPLOADED_FOLDER + file.getOriginalFilename());
+			Files.write(path, bytes);
+
+			if (file.getContentType() != null) {
+				response = fileDumpService.dumpFile(new File(UPLOADED_FOLDER + file.getOriginalFilename()), shift, objectName);
+			}
+
+		} catch (IOException e) {
+			response = new Response("fail", objects, "");
+		}
+
+		return response;
+	}
+
 }

@@ -1,7 +1,5 @@
 package com.org.models;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,7 +25,7 @@ public class PIR3_SCanOpcodeIssue {
 	@Column private Double pi_Inoculation;
 	@Column private Double pi_Bottles;
 	@Column private String pi_Date;
-	@Column private Date pi_Time;
+	@Column private String pi_Time;
 	@Column private Integer pi_prweek;
 	@Column private Integer pi_prday;
 	@Column private Integer pi_prshift;
@@ -101,10 +99,10 @@ public class PIR3_SCanOpcodeIssue {
 	public void setPi_Date(String pi_Date) {
 		this.pi_Date = pi_Date;
 	}
-	public Date getPi_Time() {
+	public String getPi_Time() {
 		return pi_Time;
 	}
-	public void setPi_Time(Date pi_Time) {
+	public void setPi_Time(String pi_Time) {
 		this.pi_Time = pi_Time;
 	}
 	public Integer getPi_prweek() {

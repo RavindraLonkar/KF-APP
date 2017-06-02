@@ -61,3 +61,16 @@ body {
 .top24{
 	 margin-top: 24px;
 }
+.padding{
+    padding-left: 15px;
+}
+.error-msg-text {
+    color: red!important;
+}
+.pl {
+    padding-left: 0px !important;
+}
+
+.well{
+	background-color: #b29d85;
+}
