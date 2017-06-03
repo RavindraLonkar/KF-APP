@@ -24,6 +24,8 @@ $( document ).ready(function() {
 		   
     	}
     }); 
+    
+    var fileType = "";
     function pGR_IssueNewPost(data,objectName){
               
         $.ajax({
@@ -39,6 +41,7 @@ $( document ).ready(function() {
             	var dataSet=result.data;
             	if(jQuery.isEmptyObject(dataSet))
             		return;
+            	fileType = result.fileType;
             	
             	$("#PGR_IssueNew").show();
             	$('#PGR_IssueNew').dataTable( {
