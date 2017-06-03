@@ -7,6 +7,8 @@
 <link rel="stylesheet" th:href="@{/css/assets/style.css}"></link>
 <link rel="stylesheet" th:href="@{/css/vendor/datatable.css}"></link>
 <link rel="stylesheet" th:href="@{/css/vendor/bootstrap.min.css}"></link>
+<link rel="icon" type="image/x-icon"
+	th:href="@{/css/images/favicon.ico}"></link>
 
 <script type="text/javascript" th:src="@{/js/vendor/jquery.min.js}"></script>
 <script type="text/javascript"
@@ -25,7 +27,9 @@
 		<div class="row">
 			<div class="col-md-4"></div>
 			<div class="col-md-12">
-				<h2 class="text-center"><b>KF Bioplant Back Office Portal</b></h2>
+				<h2 class="text-center">
+					<b>KF Bioplant Back Office Portal</b>
+				</h2>
 			</div>
 			<div class="col-md-4"></div>
 		</div>
@@ -42,8 +46,8 @@
 						<div class="input-group col-xs-12">
 							<span class="input-group-addon"><i
 								class="glyphicon glyphicon-file"></i></span> <input type="text"
-								class="form-control" disabled="true" placeholder="Upload File" id="inputFileName"></input>
-							<span class="input-group-btn">
+								class="form-control" disabled="true" placeholder="Upload File"
+								id="inputFileName"></input> <span class="input-group-btn">
 								<button class="browse btn btn-primary" type="button">
 									<i class="glyphicon glyphicon-search"></i> Browse
 								</button>
@@ -53,25 +57,24 @@
 					<div class="error-msg-text hide" id="file_error">Please
 						Select File.</div>
 					<div class="error-msg-text hide" id="fileType_error">Please
-						Select Valid File.(eg.txt file)</div>	
+						Select Valid File.(eg.txt file)</div>
 				</div>
 
 				<div class="form-group col-md-2 clearfix">
-				<div class="clearfix">
-				<label for="shift" class="padding">Select Shift</label> 
-					<div class="dropdown form-group col-xs-12">
-						<select
-							class="form-control" name="shift" id="shift">
-							<option value="0">---Select---</option>
-							<option value="1">First Shift</option>
-							<option value="2">Second Shift</option>
-						</select>
-					</div>
+					<div class="clearfix">
+						<label for="shift" class="padding">Select Shift</label>
+						<div class="dropdown form-group col-xs-12">
+							<select class="form-control" name="shift" id="shift">
+								<option value="0">---Select---</option>
+								<option value="1">First Shift</option>
+								<option value="2">Second Shift</option>
+							</select>
+						</div>
 					</div>
 					<div class="error-msg-text hide" id="shift_error">Please
 						Select Shift.</div>
 				</div>
-				
+
 				<div class="form-group col-md-2 clearfix">
 					<button type="button" class="btn btn-primary form-control top24"
 						id="btnSubmit">Upload</button>
@@ -82,40 +85,20 @@
 	<div class="container well well-sm">
 		<div class="row">
 			<div class="col-md-12">
-				<table id="PGR_IssueNew" class="table table-striped table-bordered"
-					cellspacing="0" width="100%">
-					<thead>
-						<tr>
-							<th>pi_ID</th>
-							<th>plant_loc</th>
-							<th>Pgr_no</th>
-							<th>rack_Code</th>
-							<th>Shelf_Code.</th>
-							<th>block_code</th>
-							<th>pi_Branchcode</th>
-							<th>pi_Variety</th>
-							<th>pi_CorB</th>
-							<th>pi_Opcode</th>
-							<th>pi_Stage</th>
-							<th>pi_Week</th>
-							<th>pi_Day</th>
-							<th>pi_Shift</th>
-							<th>pi_Inoculation</th>
-							<th>pi_Bottles</th>
-							<th>pi_Date</th>
-							<th>pi_Time</th>
-							<th>pi_prweek</th>
-							<th>pi_prday</th>
-							<th>pi_prshift</th>
-							<th>pi_pryear</th>
-							<th>pi_Year</th>
-						</tr>
-					</thead>
-					<tbody>
-					</tbody>
-				</table>
+				<div th:if="${fileType == PGR_IssueNew}">
+					<div th:replace="fragments/tables :: pGR_IssueNew"></div>
+				</div>
+				<div th:if="${fileType == PIR1_SCanOpcodeIssue}">
+					<div th:replace="fragments/tables :: PIR1_SCanOpcodeIssue"></div>
+				</div>
+				<div th:if="${fileType == PIR2_SCanOpcodeIssue}">
+					<div th:replace="fragments/tables :: PIR2_SCanOpcodeIssue"></div>
+				</div>
+				<div th:if="${fileType == PIR3_SCanOpcodeIssue}">
+					<div th:replace="fragments/tables :: PIR3_SCanOpcodeIssue"></div>
+				</div>
 			</div>
 		</div>
-</div><p></p>
+	</div>
 </body>
 </html>

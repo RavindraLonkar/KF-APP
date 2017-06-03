@@ -14,6 +14,9 @@ import com.org.models.PIR1_SCanOpcodeIssue;
 import com.org.models.PIR2_SCanOpcodeIssue;
 import com.org.models.PIR3_SCanOpcodeIssue;
 import com.org.repositories.PGR_IssueNewRepository;
+import com.org.repositories.PIR1_SCanOpcodeIssueRepository;
+import com.org.repositories.PIR2_SCanOpcodeIssueRepository;
+import com.org.repositories.PIR3_SCanOpcodeIssueRepository;
 import com.org.utils.CommonConstants;
 import com.org.utils.CustomFileUtils;
 import com.org.utils.Response;
@@ -21,9 +24,11 @@ import com.org.utils.Response;
 @Service
 public class FileDumpService {
 
-	@Autowired
-	PGR_IssueNewRepository pGR_IssueNewRepository;
-
+	@Autowired PGR_IssueNewRepository pGR_IssueNewRepository;
+	@Autowired PIR1_SCanOpcodeIssueRepository pIR1_SCanOpcodeIssueRepository;
+	@Autowired PIR2_SCanOpcodeIssueRepository pIR2_SCanOpcodeIssueRepository;
+	@Autowired PIR3_SCanOpcodeIssueRepository pIR3_SCanOpcodeIssueRepository;
+	
 	Response response=new Response();
 	
 	private Logger logger = Logger.getLogger(FileDumpService.class);
@@ -36,7 +41,7 @@ public class FileDumpService {
 	@SuppressWarnings({ "unchecked", "deprecation" })
 	public Response dumpFile(File file,String shift, String objectName) {
 		String fileContent = null;
-		List<PGR_IssueNew> pgrdata=new ArrayList<>();
+		
 		try {
 
 			fileContent = FileUtils.readFileToString(file);
@@ -60,7 +65,7 @@ public class FileDumpService {
 						pGR_IssueNew.setPi_prshift(Integer.parseInt(shift));
 					}
 					
-					pgrdata= (List<PGR_IssueNew>) pGR_IssueNewRepository.save((List<PGR_IssueNew>) dataList);
+					List<PGR_IssueNew> pgrdata = (List<PGR_IssueNew>) pGR_IssueNewRepository.save((List<PGR_IssueNew>) dataList);
 					response = new Response("sucess", pgrdata,"PGR_IssueNew");
 				break;
 				case "PIR1_SCanOpcodeIssue":
@@ -78,7 +83,8 @@ public class FileDumpService {
 						pIR1_SCanOpcodeIssue.setPi_prshift(1);
 					}
 					
-					pGR_IssueNewRepository.save((List<PGR_IssueNew>) dataList);
+					List<PIR1_SCanOpcodeIssue> pIR1_SCanOpcodeIssueNewList = (List<PIR1_SCanOpcodeIssue>) pIR1_SCanOpcodeIssueRepository.save((List<PIR1_SCanOpcodeIssue>) dataList);
+					response = new Response("sucess", pIR1_SCanOpcodeIssueNewList,"PIR1_SCanOpcodeIssue");
 				break;
 				case "PIR2_SCanOpcodeIssue":
 					dataList = this.getModels(PIR2_SCanOpcodeIssue.class);
@@ -95,7 +101,9 @@ public class FileDumpService {
 						pIR2_SCanOpcodeIssue.setPi_prshift(1);
 					}
 					
-					pGR_IssueNewRepository.save((List<PGR_IssueNew>) dataList);
+					List<PIR2_SCanOpcodeIssue> pIR2_SCanOpcodeIssueNewList = (List<PIR2_SCanOpcodeIssue>) pIR2_SCanOpcodeIssueRepository.save((List<PIR2_SCanOpcodeIssue>) dataList);
+					response = new Response("sucess", pIR2_SCanOpcodeIssueNewList,"PIR2_SCanOpcodeIssue");
+
 				break;
 				case "PIR3_SCanOpcodeIssue":
 					dataList = this.getModels(PIR3_SCanOpcodeIssue.class);
@@ -112,7 +120,8 @@ public class FileDumpService {
 						pIR3_SCanOpcodeIssue.setPi_prshift(1);
 					}
 					
-					pgrdata=(List<PGR_IssueNew>) pGR_IssueNewRepository.save((List<PGR_IssueNew>) dataList);
+					List<PIR3_SCanOpcodeIssue> pIR3_SCanOpcodeIssueNewList = (List<PIR3_SCanOpcodeIssue>) pIR3_SCanOpcodeIssueRepository.save((List<PIR3_SCanOpcodeIssue>) dataList);
+					response = new Response("sucess", pIR3_SCanOpcodeIssueNewList,"PIR3_SCanOpcodeIssue");
 				break;
 				default:
 					logger.info("No case match!");
