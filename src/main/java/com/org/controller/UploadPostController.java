@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.org.services.FileDumpService;
+import com.org.utils.CommonConstants;
 import com.org.utils.Response;
 
 @RestController
@@ -25,7 +26,7 @@ public class UploadPostController {
 	FileDumpService fileDumpService;
 
 	@Value("${file.upload.folderpath}")
-	private String UPLOADED_FOLDER; // = "E:/project/";
+	private String UPLOADED_FOLDER;
 
 	Response response = new Response();
 
@@ -38,7 +39,7 @@ public class UploadPostController {
 			@RequestParam("shift") String shift) {
 
 		if (file.isEmpty()) {
-			response = new Response("Empty file", objects, "");
+			response = new Response(CommonConstants.KF_FAIL, objects, "");
 			return response;
 		}
 
@@ -46,6 +47,12 @@ public class UploadPostController {
 			// Get the file and save it somewhere
 			byte[] bytes = file.getBytes();
 			Path path = Paths.get(UPLOADED_FOLDER + file.getOriginalFilename());
+			
+			if(Files.exists(path)){
+				response = new Response(CommonConstants.KF_FILE_EXISTS, objects, "");
+				return response;
+			}
+			
 			Files.write(path, bytes);
 
 			if (file.getContentType() != null) {
@@ -53,7 +60,7 @@ public class UploadPostController {
 			}
 
 		} catch (IOException e) {
-			response = new Response("fail", objects, "");
+			response = new Response(CommonConstants.KF_FAIL, objects, "");
 		}
 
 		return response;

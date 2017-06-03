@@ -66,7 +66,7 @@ public class FileDumpService {
 					}
 					
 					List<PGR_IssueNew> pgrdata = (List<PGR_IssueNew>) pGR_IssueNewRepository.save((List<PGR_IssueNew>) dataList);
-					response = new Response("sucess", pgrdata,"PGR_IssueNew");
+					response = new Response(CommonConstants.KF_SCUCESS, pgrdata,"PGR_IssueNew");
 				break;
 				case "PIR1_SCanOpcodeIssue":
 					dataList = this.getModels(PIR1_SCanOpcodeIssue.class);
@@ -84,7 +84,7 @@ public class FileDumpService {
 					}
 					
 					List<PIR1_SCanOpcodeIssue> pIR1_SCanOpcodeIssueNewList = (List<PIR1_SCanOpcodeIssue>) pIR1_SCanOpcodeIssueRepository.save((List<PIR1_SCanOpcodeIssue>) dataList);
-					response = new Response("sucess", pIR1_SCanOpcodeIssueNewList,"PIR1_SCanOpcodeIssue");
+					response = new Response(CommonConstants.KF_SCUCESS, pIR1_SCanOpcodeIssueNewList,"PIR1_SCanOpcodeIssue");
 				break;
 				case "PIR2_SCanOpcodeIssue":
 					dataList = this.getModels(PIR2_SCanOpcodeIssue.class);
@@ -102,7 +102,7 @@ public class FileDumpService {
 					}
 					
 					List<PIR2_SCanOpcodeIssue> pIR2_SCanOpcodeIssueNewList = (List<PIR2_SCanOpcodeIssue>) pIR2_SCanOpcodeIssueRepository.save((List<PIR2_SCanOpcodeIssue>) dataList);
-					response = new Response("sucess", pIR2_SCanOpcodeIssueNewList,"PIR2_SCanOpcodeIssue");
+					response = new Response(CommonConstants.KF_SCUCESS, pIR2_SCanOpcodeIssueNewList,"PIR2_SCanOpcodeIssue");
 
 				break;
 				case "PIR3_SCanOpcodeIssue":
@@ -121,7 +121,7 @@ public class FileDumpService {
 					}
 					
 					List<PIR3_SCanOpcodeIssue> pIR3_SCanOpcodeIssueNewList = (List<PIR3_SCanOpcodeIssue>) pIR3_SCanOpcodeIssueRepository.save((List<PIR3_SCanOpcodeIssue>) dataList);
-					response = new Response("sucess", pIR3_SCanOpcodeIssueNewList,"PIR3_SCanOpcodeIssue");
+					response = new Response(CommonConstants.KF_SCUCESS, pIR3_SCanOpcodeIssueNewList,"PIR3_SCanOpcodeIssue");
 				break;
 				default:
 					logger.info("No case match!");

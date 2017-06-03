@@ -38,6 +38,9 @@ $( document ).ready(function() {
             cache: false,
             timeout: 600000,
             success : function(result) {
+            	if(result.status=='3'){
+            		BootstrapDialog.alert('File is already uploded!');
+            	}
             	var dataSet=result.data;
             	if(jQuery.isEmptyObject(dataSet))
             		return;
