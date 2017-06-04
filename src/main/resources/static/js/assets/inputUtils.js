@@ -3,5 +3,5 @@ $(document).on('click', '.browse', function(){
   file.trigger('click');
 });
 $(document).on('change', '.file', function(){
-  $(this).parent().find('.form-control').val($(this).val().replace(/C:\\fakepath\\/i, ''));
+  $(this).parent().find('.form-control').val($(this).val().replace(/C:\\fakepath\\/i, '').replace(/\[.*\]/, ''));
 });

@@ -39,14 +39,14 @@ public class UploadPostController {
 			@RequestParam("shift") String shift) {
 
 		if (file.isEmpty()) {
-			response = new Response(CommonConstants.KF_FAIL, objects, "");
+			response = new Response(CommonConstants.KF_FILE_EMPTY, objects, "");
 			return response;
 		}
 
 		try {
 			// Get the file and save it somewhere
 			byte[] bytes = file.getBytes();
-			Path path = Paths.get(UPLOADED_FOLDER + file.getOriginalFilename());
+			Path path = Paths.get(UPLOADED_FOLDER + file.getOriginalFilename().replaceAll("\\[.*\\]", ""));
 			
 			if(Files.exists(path)){
 				response = new Response(CommonConstants.KF_FILE_EXISTS, objects, "");

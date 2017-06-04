@@ -8,16 +8,16 @@ $( document ).ready(function() {
         // Prevent the form from submitting via the browser.
         event.preventDefault();
               
-        var fileName = $("#file").val().split("\\").pop(-1);
-        var validation=uploadFormValidation(fileName);
+        var fileName =matchFileName($("#file").val().split("\\").pop(-1)).toUpperCase().trim();
+        var validation=uploadFormValidation($("#file").val().split("\\").pop(-1));
         
         if(validation==true){
-	        switch(true){
-	        	case fileName.indexOf('PGR_ISSUE') > -1:
-	        		pGR_IssueNewPost(new FormData($('#uploadFile')[0]),"PGR_IssueNew");
+	        switch(fileName){
+	        	case "PGR_ISSUE":
+	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PGR_ISSUE",tableHeaderObject.PGR_IssueNew);
 	        	break;
 	        	case fileName.indexOf('PIR1_SCanOpcodeIssue') > -1:
-	        		PIR1_SCanOpcodeIssuePost(new FormData($('#uploadFile')[0]),"PIR1_SCanOpcodeIssue");
+	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PIR1_SCanOpcodeIssue");
 	        	break;
 	        	default:        		
 	        }        
@@ -26,7 +26,7 @@ $( document ).ready(function() {
     }); 
     
     var fileType = "";
-    function pGR_IssueNewPost(data,objectName){
+    function ajaxFilePost(data,objectName,dataTableHeader){
               
         $.ajax({
             type : "POST",
@@ -40,56 +40,18 @@ $( document ).ready(function() {
             success : function(result) {
             	if(result.status=='3'){
             		BootstrapDialog.alert('File is already uploded!');
-            	}
+            	}else{
             	var dataSet=result.data;
             	if(jQuery.isEmptyObject(dataSet))
             		return;
             	fileType = result.fileType;
-            	
-            	$("#PGR_IssueNew").show();
-            	$('#PGR_IssueNew').dataTable( {
-			        "data": dataSet,
-			        "scrollX": true,
-			        //"order": [[ 1, "asc" ]],
-			        "bLengthChange": false,
-			        "columns": [
-						    { "data": "pi_ID" },
-						    { "data": "plant_loc"},
-		                    { "data": "pgr_no" },
-		                    { "data": "rack_Code" },
-		                    { "data": "shelf_Code" },
-		                    { "data": "block_code"},
-		                    { "data": "pi_Branchcode" },
-		                    { "data": "pi_Variety" },
-		                    { "data": "pi_CorB"},
-		                    
-		                    {"data": "pi_Opcode" },
-		                    { "data": "pi_Stage" },
-		                    { "data": "pi_Week" },
-		                    { "data": "pi_Day" },
-		                    { "data": "pi_Shift" },
-		                    { "data": "pi_Inoculation"},
-		                    
-		                    {"data": "pi_Bottles" },
-		                    {"data": "pi_Date" },
-		                    { "data": "pi_Time" },
-		                    { "data": "pi_prweek" },
-		                    { "data": "pi_prday" },
-		                    { "data": "pi_prshift" },
-		                    { "data": "pi_pryear"},
-		                    { "data": "pi_Year" }
-		      		 ],
-			    } );
+            	datasetToDataTable(dataSet,fileType,dataTableHeader);
+            }	
             },
             error : function(e) {
-            	$("#PGR_IssueNew").hide();
+            	$("#"+fileType+"").hide();
                 console.log("ERROR: ", e);
             }
         });
     }
-    
-    function PIR1_SCanOpcodeIssuePost(data){
-    	
-    }
-      
 })

@@ -36,3 +36,32 @@ function uploadFormValidation(filename){
 	return validation;
 }
 
+function matchFileName(filename){
+	
+	var fileName=filename.split('_');
+	var matchFile="";
+	for(filecount=0;filecount<fileName.length;filecount++){
+		
+		if(checkFileContains(fileName[filecount])==false){
+			if(matchFile!=""){
+				matchFile=matchFile+"_"+fileName[filecount];	
+			}else{
+				matchFile=fileName[filecount];
+			}
+				
+		}else{
+			return matchFile;
+		}
+	}
+}
+
+function checkFileContains(fileSplitValue){
+    var t = fileSplitValue.match(/^(\d{2})\-(\d{2})\-(\d{4})$/);
+    if(t===null) return false;
+    var d=parseInt(t[1]), m=parseInt(t[2],10), y=parseInt(t[3],10);
+    //below should be more acurate algorithm
+    if(m>=1 && m<=12 && d>=1 && d<=31){
+            return true;   
+    }
+    return false;
+}

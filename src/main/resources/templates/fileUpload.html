@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" th:href="@{/css/assets/style.css}"></link>
 <link rel="stylesheet" th:href="@{/css/vendor/datatable.css}"></link>
-<link rel="stylesheet" th:href="@{/css/vendor/bootstrap.min.css}"></link>
 <link rel="stylesheet" th:href="@{/css/vendor/bootstrap-dialog.min.css}"></link>
+<link rel="stylesheet" th:href="@{/css/vendor/bootstrap.min.css}"></link>
 <link rel="icon" type="image/x-icon"
 	th:href="@{/css/images/favicon.ico}"></link>
 
@@ -19,12 +19,16 @@
 <script type="text/javascript" th:src="@{/js/assets/inputUtils.js}"></script>
 <script type="text/javascript" th:src="@{/js/assets/fileUpload.js}"></script>
 <script type="text/javascript" th:src="@{/js/assets/formValidation.js}"></script>
+<script type="text/javascript" th:src="@{/js/assets/dataBinding.js}"></script>
+<script type="text/javascript" th:src="@{/js/assets/tableHeaders.js}"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('#PGR_IssueNew').hide();
 	});
 </script>
+
 </head>
+
 <body>
 	<div class="container well well-sm">
 		<div class="row">
@@ -92,13 +96,13 @@
 					<div th:replace="fragments/tables :: pGR_IssueNew"></div>
 				</div>
 				<div th:if="${fileType == PIR1_SCanOpcodeIssue}">
-					<div th:replace="fragments/tables :: PIR1_SCanOpcodeIssue"></div>
+					<div th:replace="fragments/tables :: pIR1_SCanOpcodeIssue"></div>
 				</div>
 				<div th:if="${fileType == PIR2_SCanOpcodeIssue}">
-					<div th:replace="fragments/tables :: PIR2_SCanOpcodeIssue"></div>
+					<div th:replace="fragments/tables :: pIR2_SCanOpcodeIssue"></div>
 				</div>
 				<div th:if="${fileType == PIR3_SCanOpcodeIssue}">
-					<div th:replace="fragments/tables :: PIR3_SCanOpcodeIssue"></div>
+					<div th:replace="fragments/tables :: pIR3_SCanOpcodeIssue"></div>
 				</div>
 			</div>
 		</div>

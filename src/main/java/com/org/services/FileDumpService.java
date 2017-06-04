@@ -49,7 +49,7 @@ public class FileDumpService {
 			List<?> dataList = null;
 			
 			switch (objectName) {
-				case "PGR_IssueNew":
+				case "PGR_ISSUE":
 					dataList = this.getModels(PGR_IssueNew.class);
 					CustomFileUtils<PGR_IssueNew> customPGR_IssueNewUtils = new CustomFileUtils<PGR_IssueNew>();
 					dataList = customPGR_IssueNewUtils.getMappedObjectList(fileContent, new PGR_IssueNew(),
@@ -80,7 +80,7 @@ public class FileDumpService {
 						pIR1_SCanOpcodeIssue.setPi_prday(customPIR1_SCanOpcodeIssueUtils.getPrDay());
 						pIR1_SCanOpcodeIssue.setPi_pryear(customPIR1_SCanOpcodeIssueUtils.getPrYear());
 						//pIR1_SCanOpcodeIssue.setPi_Year(customPIR1_SCanOpcodeIssueUtils.getYear(pIR1_SCanOpcodeIssue.getPi_Week()));
-						pIR1_SCanOpcodeIssue.setPi_prshift(1);
+						pIR1_SCanOpcodeIssue.setPi_prshift(Integer.parseInt(shift));
 					}
 					
 					List<PIR1_SCanOpcodeIssue> pIR1_SCanOpcodeIssueNewList = (List<PIR1_SCanOpcodeIssue>) pIR1_SCanOpcodeIssueRepository.save((List<PIR1_SCanOpcodeIssue>) dataList);
@@ -98,7 +98,7 @@ public class FileDumpService {
 						pIR2_SCanOpcodeIssue.setPi_prday(customPIR2_SCanOpcodeIssueUtils.getPrDay());
 						pIR2_SCanOpcodeIssue.setPi_pryear(customPIR2_SCanOpcodeIssueUtils.getPrYear());
 						//pIR2_SCanOpcodeIssue.setPi_Year(customPIR2_SCanOpcodeIssueUtils.getYear(pIR2_SCanOpcodeIssue.getPi_Week()));
-						pIR2_SCanOpcodeIssue.setPi_prshift(1);
+						pIR2_SCanOpcodeIssue.setPi_prshift(Integer.parseInt(shift));
 					}
 					
 					List<PIR2_SCanOpcodeIssue> pIR2_SCanOpcodeIssueNewList = (List<PIR2_SCanOpcodeIssue>) pIR2_SCanOpcodeIssueRepository.save((List<PIR2_SCanOpcodeIssue>) dataList);
