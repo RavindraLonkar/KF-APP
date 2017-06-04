@@ -2,7 +2,6 @@ function datasetToDataTable(dataSet,fileType,dataTableHeader){
 	
 	var header=dataTableHeader.split(',');
 	$("#"+fileType+"").show();
-
 	$("#"+fileType+"").dataTable( {
         "data": dataSet,
         "scrollX": true,
@@ -36,4 +35,6 @@ function datasetToDataTable(dataSet,fileType,dataTableHeader){
                 { "data": ""+header[22]+"" }
   		 ],
     } );
+	
+$("#tableDiv").show();
 }

@@ -1,132 +1,136 @@
 <!DOCTYPE html>
 <html>
 <body>
-	<table id="PGR_IssueNew" class="table table-striped table-bordered"
-		cellspacing="0" width="100%" th:fragment="pGR_IssueNew">
-		<thead>
-			<tr>
-				<th>pi_ID</th>
-				<th>plant_loc</th>
-				<th>Pgr_no</th>
-				<th>rack_Code</th>
-				<th>Shelf_Code.</th>
-				<th>block_code</th>
-				<th>pi_Branchcode</th>
-				<th>pi_Variety</th>
-				<th>pi_CorB</th>
-				<th>pi_Opcode</th>
-				<th>pi_Stage</th>
-				<th>pi_Week</th>
-				<th>pi_Day</th>
-				<th>pi_Shift</th>
-				<th>pi_Inoculation</th>
-				<th>pi_Bottles</th>
-				<th>pi_Date</th>
-				<th>pi_Time</th>
-				<th>pi_prweek</th>
-				<th>pi_prday</th>
-				<th>pi_prshift</th>
-				<th>pi_pryear</th>
-				<th>pi_Year</th>
-			</tr>
-		</thead>
-		<tbody>
-		</tbody>
-	</table>
-	
-	<table id="PIR1_Scanopcodeissue" class="table table-striped table-bordered"
-		cellspacing="0" width="100%" th:fragment="pIR1_Scanopcodeissue">
-		<thead>
-			<tr>
-				<th>pi_ID</th>
-				<th>plant_loc</th>
-				<th>block_code</th>
-				<th>pi_BranchCode</th>
-				<th>pi_Variety</th>				
-				<th>pi_CorB</th>
-				<th>pi_Opcode</th>
-				<th>pi_Stage</th>
-				<th>pi_Week</th>
-				<th>pi_Day</th>
-				<th>pi_Shift</th>
-				<th>pi_Inoculation</th>
-				<th>pi_Bottles</th>
-				<th>pi_Date</th>
-				<th>pi_Time</th>
-				<th>pi_prWeek</th>
-				<th>pi_prDay</th>
-				<th>pi_prShift</th>
-				<th>pi_prYear</th>		
-				<th>pi_ScnOpcode</th>
-				<th>pi_PIR_No</th>
-			</tr>
-		</thead>
-		<tbody>
-		</tbody>
-	</table>
-	
-	<table id="PIR2_Scanopcodeissue" class="table table-striped table-bordered"
-		cellspacing="0" width="100%" th:fragment="PIR2_Scanopcodeissue">
-		<thead>
-			<tr>
-				<th>pi_ID</th>
-				<th>plant_loc</th>
-				<th>block_code</th>
-				<th>pi_BranchCode</th>
-				<th>pi_Variety</th>
-				<th>pi_CorB</th>
-				<th>pi_Opcode</th>
-				<th>pi_Stage</th>
-				<th>pi_Week</th>
-				<th>pi_Day</th>
-				<th>pi_Shift</th>
-				<th>pi_Inoculation</th>
-				<th>pi_Bottles</th>
-				<th>pi_Date</th>
-				<th>pi_Time</th>
-				<th>pi_prWeek</th>
-				<th>pi_prDay</th>
-				<th>pi_prShift</th>
-				<th>pi_prYear</th>
-				<th>pi_BranchCode</th>
-				<th>pi_ScnOpcode</th>
-				<th>pi_PIR_No</th>
-			</tr>
-		</thead>
-		<tbody>
-		</tbody>
-	</table>
-	
-	<table id="PIR3_Scanopcodeissue" class="table table-striped table-bordered"
-		cellspacing="0" width="100%" th:fragment="pIR3_Scanopcodeissue">
-		<thead>
-			<tr>
-				<th>pi_ID</th>
-				<th>plant_loc</th>
-				<th>block_code</th>
-				<th>pi_BranchCode</th>
-				<th>pi_Variety</th>				
-				<th>pi_CorB</th>
-				<th>pi_Opcode</th>
-				<th>pi_Stage</th>
-				<th>pi_Week</th>
-				<th>pi_Day</th>
-				<th>pi_Shift</th>
-				<th>pi_Inoculation</th>
-				<th>pi_Bottles</th>
-				<th>pi_Date</th>
-				<th>pi_Time</th>
-				<th>pi_prWeek</th>
-				<th>pi_prDay</th>
-				<th>pi_prShift</th>
-				<th>pi_prYear</th>				
-				<th>pi_ScnOpcode</th>
-				<th>pi_PIR_No</th>
-			</tr>
-		</thead>
-		<tbody>
-		</tbody>
-	</table>
-	
+	<div th:fragment="tables">
+		<table id="PGR_IssueNew" class="table table-striped table-bordered"
+			cellspacing="0" width="100%" th:fragment="pGR_IssueNew">
+			<thead>
+				<tr>
+					<th>pi_ID</th>
+					<th>plant_loc</th>
+					<th>Pgr_no</th>
+					<th>rack_Code</th>
+					<th>Shelf_Code.</th>
+					<th>block_code</th>
+					<th>pi_Branchcode</th>
+					<th>pi_Variety</th>
+					<th>pi_CorB</th>
+					<th>pi_Opcode</th>
+					<th>pi_Stage</th>
+					<th>pi_Week</th>
+					<th>pi_Day</th>
+					<th>pi_Shift</th>
+					<th>pi_Inoculation</th>
+					<th>pi_Bottles</th>
+					<th>pi_Date</th>
+					<th>pi_Time</th>
+					<th>pi_prweek</th>
+					<th>pi_prday</th>
+					<th>pi_prshift</th>
+					<th>pi_pryear</th>
+					<th>pi_Year</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+
+		<table id="PIR1_Scanopcodeissue"
+			class="table table-striped table-bordered" cellspacing="0"
+			width="100%" th:fragment="pIR1_Scanopcodeissue">
+			<thead>
+				<tr>
+					<th>pi_ID</th>
+					<th>plant_loc</th>
+					<th>block_code</th>
+					<th>pi_BranchCode</th>
+					<th>pi_Variety</th>
+					<th>pi_CorB</th>
+					<th>pi_Opcode</th>
+					<th>pi_Stage</th>
+					<th>pi_Week</th>
+					<th>pi_Day</th>
+					<th>pi_Shift</th>
+					<th>pi_Inoculation</th>
+					<th>pi_Bottles</th>
+					<th>pi_Date</th>
+					<th>pi_Time</th>
+					<th>pi_prWeek</th>
+					<th>pi_prDay</th>
+					<th>pi_prShift</th>
+					<th>pi_prYear</th>
+					<th>pi_ScnOpcode</th>
+					<th>pi_PIR_No</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+
+		<table id="PIR2_Scanopcodeissue"
+			class="table table-striped table-bordered" cellspacing="0"
+			width="100%" th:fragment="PIR2_Scanopcodeissue">
+			<thead>
+				<tr>
+					<th>pi_ID</th>
+					<th>plant_loc</th>
+					<th>block_code</th>
+					<th>pi_BranchCode</th>
+					<th>pi_Variety</th>
+					<th>pi_CorB</th>
+					<th>pi_Opcode</th>
+					<th>pi_Stage</th>
+					<th>pi_Week</th>
+					<th>pi_Day</th>
+					<th>pi_Shift</th>
+					<th>pi_Inoculation</th>
+					<th>pi_Bottles</th>
+					<th>pi_Date</th>
+					<th>pi_Time</th>
+					<th>pi_prWeek</th>
+					<th>pi_prDay</th>
+					<th>pi_prShift</th>
+					<th>pi_prYear</th>
+					<th>pi_BranchCode</th>
+					<th>pi_ScnOpcode</th>
+					<th>pi_PIR_No</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+
+		<table id="PIR3_Scanopcodeissue"
+			class="table table-striped table-bordered" cellspacing="0"
+			width="100%" th:fragment="pIR3_Scanopcodeissue">
+			<thead>
+				<tr>
+					<th>pi_ID</th>
+					<th>plant_loc</th>
+					<th>block_code</th>
+					<th>pi_BranchCode</th>
+					<th>pi_Variety</th>
+					<th>pi_CorB</th>
+					<th>pi_Opcode</th>
+					<th>pi_Stage</th>
+					<th>pi_Week</th>
+					<th>pi_Day</th>
+					<th>pi_Shift</th>
+					<th>pi_Inoculation</th>
+					<th>pi_Bottles</th>
+					<th>pi_Date</th>
+					<th>pi_Time</th>
+					<th>pi_prWeek</th>
+					<th>pi_prDay</th>
+					<th>pi_prShift</th>
+					<th>pi_prYear</th>
+					<th>pi_ScnOpcode</th>
+					<th>pi_PIR_No</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
 </body>
 </html>

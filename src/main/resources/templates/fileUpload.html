@@ -24,6 +24,9 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('#PGR_IssueNew').hide();
+		$('#PIR1_Scanopcodeissue').hide();
+		$('#PIR2_Scanopcodeissue').hide();
+		$('#PIR3_Scanopcodeissue').hide();
 	});
 </script>
 
@@ -92,18 +95,7 @@
 	<div class="container well well-sm">
 		<div class="row">
 			<div class="col-md-12">
-				<div th:if="${fileType == PGR_IssueNew}">
-					<div th:replace="fragments/tables :: pGR_IssueNew"></div>
-				</div>
-				<div th:if="${fileType == PIR1_SCanOpcodeIssue}">
-					<div th:replace="fragments/tables :: pIR1_SCanOpcodeIssue"></div>
-				</div>
-				<div th:if="${fileType == PIR2_SCanOpcodeIssue}">
-					<div th:replace="fragments/tables :: pIR2_SCanOpcodeIssue"></div>
-				</div>
-				<div th:if="${fileType == PIR3_SCanOpcodeIssue}">
-					<div th:replace="fragments/tables :: pIR3_SCanOpcodeIssue"></div>
-				</div>
+				<div th:replace="fragments/tables :: tables"></div>
 			</div>
 		</div>
 	</div>
