@@ -18,6 +18,16 @@ $( document ).ready(function() {
 	        	case  "PIR1_SCanOpcodeIssue":
 	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PIR1_SCanOpcodeIssue");
 	        	break;
+	        	case  "CONTAMINATION_HBT":
+	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"CONTAMINATION",tableHeaderObject.Contamination);
+	        	break;
+	        	case  "CONTAMINATION_FUNGUS":
+	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"CONTAMINATION",tableHeaderObject.Contamination);
+	        	break;
+	        	case  "CONTAMINATION_OTHER":
+	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"CONTAMINATION",tableHeaderObject.Contamination);
+		        break;
+	        	
 	        	default:  
 	        		notMatchCase();
 	        	break;
@@ -42,7 +52,8 @@ $( document ).ready(function() {
             		var dataSet=result.data;
             		if(jQuery.isEmptyObject(dataSet))
                 		return;
-                	datasetToDataTable(dataSet,objectName,dataTableHeader);
+                	datasetToDataTable(dataSet,objectName,dataTableColumns(dataTableHeader));
+                	BootstrapDialog.alert(result.resonCode);
             	}else{
             		BootstrapDialog.alert(result.resonCode);
             	}	
