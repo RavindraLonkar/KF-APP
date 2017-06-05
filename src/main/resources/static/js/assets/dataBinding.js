@@ -1,8 +1,8 @@
-function datasetToDataTable(dataSet,fileType,dataTableHeader){
+function datasetToDataTable(dataSet,objectName,dataTableHeader){
 	
 	var header=dataTableHeader.split(',');
-	$("#"+fileType+"").show();
-	$("#"+fileType+"").dataTable( {
+	$("#"+objectName+"").show();
+	$("#"+objectName+"").dataTable( {
         "data": dataSet,
         "scrollX": true,
         "bDestroy": true,

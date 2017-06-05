@@ -38,7 +38,9 @@ function uploadFormValidation(filename){
 
 function matchFileName(filename){
 	
-	var fileName=filename.split('_');
+	var filename=filename.split('.');
+	fileName=filename[0].split('_');
+
 	var matchFile="";
 	for(filecount=0;filecount<fileName.length;filecount++){
 		
@@ -53,6 +55,7 @@ function matchFileName(filename){
 			return matchFile;
 		}
 	}
+	return matchFile;
 }
 
 function checkFileContains(fileSplitValue){

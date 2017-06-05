@@ -2,17 +2,17 @@ package com.org.utils;
 
 public class Response {
     private String status;
-    private String fileType;
+    private String resonCode;
     private Object data;
      
     public Response(){
          
     }
      
-    public Response(String status, Object data,String fileType){
+    public Response(String status, Object data,String resonCode){
         this.status = status;
         this.data = data;
-        this.fileType=fileType;
+        this.resonCode=resonCode;
     }
  
     public String getStatus() {
@@ -31,12 +31,12 @@ public class Response {
         this.data = data;
     }
 
-	public String getFileType() {
-		return fileType;
+	public String getResonCode() {
+		return resonCode;
 	}
 
-	public void setFileType(String fileType) {
-		this.fileType = fileType;
+	public void setResonCode(String resonCode) {
+		this.resonCode = resonCode;
 	}
-    
+
 }

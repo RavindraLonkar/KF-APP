@@ -7,25 +7,25 @@ $( document ).ready(function() {
     $("#btnSubmit").click(function (event) {
         // Prevent the form from submitting via the browser.
         event.preventDefault();
-              
-        var fileName =matchFileName($("#file").val().split("\\").pop(-1)).toUpperCase().trim();
         var validation=uploadFormValidation($("#file").val().split("\\").pop(-1));
-        
+
         if(validation==true){
-	        switch(fileName){
+        	var fileName =matchFileName($("#file").val().split("\\").pop(-1)).toUpperCase().trim();
+        	switch(fileName){
 	        	case "PGR_ISSUE":
-	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PGR_ISSUE",tableHeaderObject.PGR_IssueNew);
+	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PGR_IssueNew",tableHeaderObject.PGR_IssueNew);
 	        	break;
-	        	case fileName.indexOf('PIR1_SCanOpcodeIssue') > -1:
+	        	case  "PIR1_SCanOpcodeIssue":
 	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PIR1_SCanOpcodeIssue");
 	        	break;
-	        	default:        		
+	        	default:  
+	        		notMatchCase();
+	        	break;
 	        }        
 		   
     	}
     }); 
     
-    var fileType = "";
     function ajaxFilePost(data,objectName,dataTableHeader){
               
         $.ajax({
@@ -38,20 +38,24 @@ $( document ).ready(function() {
             cache: false,
             timeout: 600000,
             success : function(result) {
-            	if(result.status=='3'){
-            		BootstrapDialog.alert('File is already uploded!');
+            	if(result.status=='1'){
+            		var dataSet=result.data;
+            		if(jQuery.isEmptyObject(dataSet))
+                		return;
+                	datasetToDataTable(dataSet,objectName,dataTableHeader);
             	}else{
-            	var dataSet=result.data;
-            	if(jQuery.isEmptyObject(dataSet))
-            		return;
-            	fileType = result.fileType;
-            	datasetToDataTable(dataSet,fileType,dataTableHeader);
-            }	
+            		BootstrapDialog.alert(result.resonCode);
+            	}	
             },
             error : function(e) {
-            	$("#"+fileType+"").hide();
+            	$("#"+objectName+"").hide();
                 console.log("ERROR: ", e);
             }
         });
+    }
+    
+    function notMatchCase(){
+    	
+    	BootstrapDialog.alert('Please Upload Correct File!');
     }
 })

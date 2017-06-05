@@ -8,6 +8,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,6 +23,8 @@ import com.org.utils.Response;
 @RestController
 public class UploadPostController {
 
+	private Logger logger = Logger.getLogger(UploadPostController.class);
+	
 	@Autowired
 	FileDumpService fileDumpService;
 
@@ -38,29 +41,37 @@ public class UploadPostController {
 	public Response singleFileUpload(@RequestParam("file") MultipartFile file, @RequestParam("objectName") String objectName,
 			@RequestParam("shift") String shift) {
 
+		Path path = null;
 		if (file.isEmpty()) {
-			response = new Response(CommonConstants.KF_FILE_EMPTY, objects, "");
+			response = new Response(CommonConstants.KF_FILE_EMPTY, objects, CommonConstants.KF_FILE_EXISTS_MESSAGE);
 			return response;
 		}
 
 		try {
 			// Get the file and save it somewhere
 			byte[] bytes = file.getBytes();
-			Path path = Paths.get(UPLOADED_FOLDER + file.getOriginalFilename().replaceAll("\\[.*\\]", ""));
+			path= Paths.get(UPLOADED_FOLDER + file.getOriginalFilename().replaceAll("\\[.*\\]", ""));
 			
 			if(Files.exists(path)){
-				response = new Response(CommonConstants.KF_FILE_EXISTS, objects, "");
+				response = new Response(CommonConstants.KF_FILE_EXISTS, objects, CommonConstants.KF_FILE_EXISTS_MESSAGE);
 				return response;
 			}
 			
 			Files.write(path, bytes);
 
 			if (file.getContentType() != null) {
-				response = fileDumpService.dumpFile(new File(UPLOADED_FOLDER + file.getOriginalFilename()), shift, objectName);
+				response = fileDumpService.dumpFile(new File(UPLOADED_FOLDER + file.getOriginalFilename().replaceAll("\\[.*\\]", "")), shift, objectName);
 			}
 
-		} catch (IOException e) {
-			response = new Response(CommonConstants.KF_FAIL, objects, "");
+		} catch (Exception e) {
+			
+			try {
+				Files.delete(path);
+				response = new Response(CommonConstants.KF_FAIL, objects, CommonConstants.KF_FAIL_MESSAGE);
+			} catch (IOException e1) {
+				logger.error(e1.getMessage());
+			}
+			
 		}
 
 		return response;
