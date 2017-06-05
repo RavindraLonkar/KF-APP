@@ -30,12 +30,14 @@ public class PGR_ReturnNew {
 	@Column private Double pr_Bottles;
 	@Column private String pr_Date;
 	@Column private Date pr_Time;
-	@Column private Integer pr_prWeek;
-	@Column private Integer pr_prDay;
-	@Column private Integer pr_prShift;
-	@Column private Double pr_prYear;
+	@Column private Integer pr_prweek;
+	@Column private Integer pr_prday;
+	@Column private Integer pr_prshift;
+	@Column private Double pr_pryear;
 	@Column private Integer pr_Year;
-	@Column private char pr_BranchCode;
+	@Column private char pr_Branchcode;
+	@Column private Integer plant_loc;
+	@Column private String block_code;	
 	public long getPr_ID() {
 		return pr_ID;
 	}
@@ -126,29 +128,29 @@ public class PGR_ReturnNew {
 	public void setPr_Time(Date pr_Time) {
 		this.pr_Time = pr_Time;
 	}
-	public Integer getPr_prWeek() {
-		return pr_prWeek;
+	public Integer getPr_prweek() {
+		return pr_prweek;
 	}
-	public void setPr_prWeek(Integer pr_prWeek) {
-		this.pr_prWeek = pr_prWeek;
+	public void setPr_prweek(Integer pr_prweek) {
+		this.pr_prweek = pr_prweek;
 	}
-	public Integer getPr_prDay() {
-		return pr_prDay;
+	public Integer getPr_prday() {
+		return pr_prday;
 	}
-	public void setPr_prDay(Integer pr_prDay) {
-		this.pr_prDay = pr_prDay;
+	public void setPr_prday(Integer pr_prday) {
+		this.pr_prday = pr_prday;
 	}
-	public Integer getPr_prShift() {
-		return pr_prShift;
+	public Integer getPr_prshift() {
+		return pr_prshift;
 	}
-	public void setPr_prShift(Integer pr_prShift) {
-		this.pr_prShift = pr_prShift;
+	public void setPr_prshift(Integer pr_prshift) {
+		this.pr_prshift = pr_prshift;
 	}
-	public Double getPr_prYear() {
-		return pr_prYear;
+	public Double getPr_pryear() {
+		return pr_pryear;
 	}
-	public void setPr_prYear(Double pr_prYear) {
-		this.pr_prYear = pr_prYear;
+	public void setPr_pryear(Double pr_pryear) {
+		this.pr_pryear = pr_pryear;
 	}
 	public Integer getPr_Year() {
 		return pr_Year;
@@ -156,11 +158,23 @@ public class PGR_ReturnNew {
 	public void setPr_Year(Integer pr_Year) {
 		this.pr_Year = pr_Year;
 	}
-	public char getPr_BranchCode() {
-		return pr_BranchCode;
+	public char getPr_Branchcode() {
+		return pr_Branchcode;
 	}
-	public void setPr_BranchCode(char pr_BranchCode) {
-		this.pr_BranchCode = pr_BranchCode;
+	public void setPr_Branchcode(char pr_Branchcode) {
+		this.pr_Branchcode = pr_Branchcode;
+	}
+	public Integer getPlant_loc() {
+		return plant_loc;
+	}
+	public void setPlant_loc(Integer plant_loc) {
+		this.plant_loc = plant_loc;
+	}
+	public String getBlock_code() {
+		return block_code;
+	}
+	public void setBlock_code(String block_code) {
+		this.block_code = block_code;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;

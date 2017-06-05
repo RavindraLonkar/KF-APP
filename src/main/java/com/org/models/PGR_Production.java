@@ -19,7 +19,7 @@ public class PGR_Production {
 	@Column private char Rack_Code;
 	@Column private String Shelf_Code;
 	@Column private String cr_Variety;
-	@Column private char cr_CorB;
+	@Column private char cr_Corb;
 	@Column private Integer cr_Opcode;
 	@Column private char cr_Stage;
 	@Column private Integer cr_Week;
@@ -30,7 +30,9 @@ public class PGR_Production {
 	@Column private char pr_Date;
 	@Column private char pr_Time;
 	@Column private Integer pr_Year;
-	@Column private char pr_BranchCode;
+	@Column private char pr_Branchcode;
+	@Column private Integer plant_loc;
+	@Column private String block_code;	
 	public long getCr_ID() {
 		return cr_ID;
 	}
@@ -61,11 +63,11 @@ public class PGR_Production {
 	public void setCr_Variety(String cr_Variety) {
 		this.cr_Variety = cr_Variety;
 	}
-	public char getCr_CorB() {
-		return cr_CorB;
+	public char getCr_Corb() {
+		return cr_Corb;
 	}
-	public void setCr_CorB(char cr_CorB) {
-		this.cr_CorB = cr_CorB;
+	public void setCr_Corb(char cr_Corb) {
+		this.cr_Corb = cr_Corb;
 	}
 	public Integer getCr_Opcode() {
 		return cr_Opcode;
@@ -127,11 +129,23 @@ public class PGR_Production {
 	public void setPr_Year(Integer pr_Year) {
 		this.pr_Year = pr_Year;
 	}
-	public char getPr_BranchCode() {
-		return pr_BranchCode;
+	public char getPr_Branchcode() {
+		return pr_Branchcode;
 	}
-	public void setPr_BranchCode(char pr_BranchCode) {
-		this.pr_BranchCode = pr_BranchCode;
+	public void setPr_Branchcode(char pr_Branchcode) {
+		this.pr_Branchcode = pr_Branchcode;
+	}
+	public Integer getPlant_loc() {
+		return plant_loc;
+	}
+	public void setPlant_loc(Integer plant_loc) {
+		this.plant_loc = plant_loc;
+	}
+	public String getBlock_code() {
+		return block_code;
+	}
+	public void setBlock_code(String block_code) {
+		this.block_code = block_code;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;

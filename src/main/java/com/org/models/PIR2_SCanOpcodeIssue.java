@@ -32,6 +32,8 @@ public class PIR2_SCanOpcodeIssue {
 	@Column private String pi_Branchcode;
 	@Column private Integer pi_Scnopcode;
 	@Column private Integer pi_PIR_No;
+	@Column private Integer plant_loc;
+	@Column private String block_code;	
 	public long getPi_ID() {
 		return pi_ID;
 	}
@@ -145,6 +147,18 @@ public class PIR2_SCanOpcodeIssue {
 	}
 	public void setPi_PIR_No(Integer pi_PIR_No) {
 		this.pi_PIR_No = pi_PIR_No;
+	}
+	public Integer getPlant_loc() {
+		return plant_loc;
+	}
+	public void setPlant_loc(Integer plant_loc) {
+		this.plant_loc = plant_loc;
+	}
+	public String getBlock_code() {
+		return block_code;
+	}
+	public void setBlock_code(String block_code) {
+		this.block_code = block_code;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
