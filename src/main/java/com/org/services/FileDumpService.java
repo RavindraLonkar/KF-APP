@@ -15,6 +15,7 @@ import com.org.models.PGR_IssueNew;
 import com.org.models.PIR1_SCanOpcodeIssue;
 import com.org.models.PIR2_SCanOpcodeIssue;
 import com.org.models.PIR3_SCanOpcodeIssue;
+import com.org.repositories.ContaminationRepository;
 import com.org.repositories.PGR_IssueNewRepository;
 import com.org.repositories.PIR1_SCanOpcodeIssueRepository;
 import com.org.repositories.PIR2_SCanOpcodeIssueRepository;
@@ -31,7 +32,7 @@ public class FileDumpService {
 	@Autowired PIR1_SCanOpcodeIssueRepository pIR1_SCanOpcodeIssueRepository;
 	@Autowired PIR2_SCanOpcodeIssueRepository pIR2_SCanOpcodeIssueRepository;
 	@Autowired PIR3_SCanOpcodeIssueRepository pIR3_SCanOpcodeIssueRepository;
-	@Autowired Contamination contamination;
+	@Autowired ContaminationRepository contaminationRepository;
 	
 	Response response=new Response();
 	
@@ -131,64 +132,26 @@ public class FileDumpService {
 					List<PIR3_SCanOpcodeIssue> pIR3_SCanOpcodeIssueNewList = (List<PIR3_SCanOpcodeIssue>) pIR3_SCanOpcodeIssueRepository.save((List<PIR3_SCanOpcodeIssue>) dataList);
 					response = new Response(CommonConstants.KF_SCUCESS, pIR3_SCanOpcodeIssueNewList,"PIR3_SCanOpcodeIssue");
 				break;
-				case "CONTAMINATION_FUNGUS":
-					dataList = this.getModels(PIR2_SCanOpcodeIssue.class);
-					CustomFileUtils<PIR2_SCanOpcodeIssue> customPIR2_SCanOpcodeIssueUtils1 = new CustomFileUtils<PIR2_SCanOpcodeIssue>();
-					dataList = customPIR2_SCanOpcodeIssueUtils1.getMappedObjectList(fileContent, new PIR2_SCanOpcodeIssue(),
-							CommonConstants.PGR_ISSUNEW_HEADER);
+				case "CONTAMINATION":
+					dataList = this.getModels(Contamination.class);
+					CustomFileUtils<Contamination> customContamination = new CustomFileUtils<Contamination>();
+					dataList = customContamination.getMappedObjectList(fileContent, new Contamination(),
+							CommonConstants.CONTAMINATION_HEADER);
 					
-					for (PIR2_SCanOpcodeIssue pIR2_SCanOpcodeIssue : (List<PIR2_SCanOpcodeIssue>) dataList) {					
-						pIR2_SCanOpcodeIssue.setPi_Time(customPIR2_SCanOpcodeIssueUtils1.getPrTime());
-						pIR2_SCanOpcodeIssue.setPi_prweek(customPIR2_SCanOpcodeIssueUtils1.getPrWeek());
-						pIR2_SCanOpcodeIssue.setPi_prday(customPIR2_SCanOpcodeIssueUtils1.getPrDay());
-						pIR2_SCanOpcodeIssue.setPi_pryear(customPIR2_SCanOpcodeIssueUtils1.getPrYear());
-						//pIR2_SCanOpcodeIssue.setPi_Year(customPIR2_SCanOpcodeIssueUtils.getYear(pIR2_SCanOpcodeIssue.getPi_Week()));
-						pIR2_SCanOpcodeIssue.setPi_prshift(Integer.parseInt(shift));
+					for (Contamination contamination : (List<Contamination>) dataList) {					
+						contamination.setCn_Time(customContamination.getPrTime());
+						contamination.setCn_prWeek(customContamination.getPrWeek());
+						contamination.setCn_prDay(customContamination.getPrDay());
+						contamination.setCn_prYear(customContamination.getPrYear());
+						contamination.setCn_Year(customContamination.getPrYear());
+						contamination.setCn_Shift(Integer.parseInt(shift));
 					}
 					
-					List<PIR2_SCanOpcodeIssue> pIR2_SCanOpcodeIssueNewList1 = (List<PIR2_SCanOpcodeIssue>) pIR2_SCanOpcodeIssueRepository.save((List<PIR2_SCanOpcodeIssue>) dataList);
-					response = new Response(CommonConstants.KF_SCUCESS, null,"PIR2_SCanOpcodeIssue");
+					List<Contamination> contaminationList = (List<Contamination>) contaminationRepository.save((List<Contamination>) dataList);
+					response = new Response(CommonConstants.KF_SCUCESS, contaminationList,"");
 
 				break;
-				case "CONTAMINATION_FUNGUS1":
-					dataList = this.getModels(PIR2_SCanOpcodeIssue.class);
-					CustomFileUtils<PIR2_SCanOpcodeIssue> customPIR2_SCanOpcodeIssueUtils11 = new CustomFileUtils<PIR2_SCanOpcodeIssue>();
-					dataList = customPIR2_SCanOpcodeIssueUtils11.getMappedObjectList(fileContent, new PIR2_SCanOpcodeIssue(),
-							CommonConstants.PGR_ISSUNEW_HEADER);
-					
-					for (PIR2_SCanOpcodeIssue pIR2_SCanOpcodeIssue : (List<PIR2_SCanOpcodeIssue>) dataList) {					
-						pIR2_SCanOpcodeIssue.setPi_Time(customPIR2_SCanOpcodeIssueUtils11.getPrTime());
-						pIR2_SCanOpcodeIssue.setPi_prweek(customPIR2_SCanOpcodeIssueUtils11.getPrWeek());
-						pIR2_SCanOpcodeIssue.setPi_prday(customPIR2_SCanOpcodeIssueUtils11.getPrDay());
-						pIR2_SCanOpcodeIssue.setPi_pryear(customPIR2_SCanOpcodeIssueUtils11.getPrYear());
-						//pIR2_SCanOpcodeIssue.setPi_Year(customPIR2_SCanOpcodeIssueUtils.getYear(pIR2_SCanOpcodeIssue.getPi_Week()));
-						pIR2_SCanOpcodeIssue.setPi_prshift(Integer.parseInt(shift));
-					}
-					
-					List<PIR2_SCanOpcodeIssue> pIR2_SCanOpcodeIssueNewList2 = (List<PIR2_SCanOpcodeIssue>) pIR2_SCanOpcodeIssueRepository.save((List<PIR2_SCanOpcodeIssue>) dataList);
-					response = new Response(CommonConstants.KF_SCUCESS, null,"PIR2_SCanOpcodeIssue");
-
-				break;
-				case "CONTAMINATION_FUNGUS11":
-					dataList = this.getModels(PIR2_SCanOpcodeIssue.class);
-					CustomFileUtils<PIR2_SCanOpcodeIssue> customPIR2_SCanOpcodeIssueUtils111 = new CustomFileUtils<PIR2_SCanOpcodeIssue>();
-					dataList = customPIR2_SCanOpcodeIssueUtils111.getMappedObjectList(fileContent, new PIR2_SCanOpcodeIssue(),
-							CommonConstants.PGR_ISSUNEW_HEADER);
-					
-					for (PIR2_SCanOpcodeIssue pIR2_SCanOpcodeIssue : (List<PIR2_SCanOpcodeIssue>) dataList) {					
-						pIR2_SCanOpcodeIssue.setPi_Time(customPIR2_SCanOpcodeIssueUtils111.getPrTime());
-						pIR2_SCanOpcodeIssue.setPi_prweek(customPIR2_SCanOpcodeIssueUtils111.getPrWeek());
-						pIR2_SCanOpcodeIssue.setPi_prday(customPIR2_SCanOpcodeIssueUtils111.getPrDay());
-						pIR2_SCanOpcodeIssue.setPi_pryear(customPIR2_SCanOpcodeIssueUtils111.getPrYear());
-						//pIR2_SCanOpcodeIssue.setPi_Year(customPIR2_SCanOpcodeIssueUtils.getYear(pIR2_SCanOpcodeIssue.getPi_Week()));
-						pIR2_SCanOpcodeIssue.setPi_prshift(Integer.parseInt(shift));
-					}
-					
-					List<PIR2_SCanOpcodeIssue> pIR2_SCanOpcodeIssueNewList21 = (List<PIR2_SCanOpcodeIssue>) pIR2_SCanOpcodeIssueRepository.save((List<PIR2_SCanOpcodeIssue>) dataList);
-					response = new Response(CommonConstants.KF_SCUCESS, null,"PIR2_SCanOpcodeIssue");
-
-				break;
-				default:
+					default:
 					logger.info("No case match!");
 					response = new Response(CommonConstants.KF_FAIL, null, CommonConstants.KF_FILE_VALID_MESSAGE);
 			}
