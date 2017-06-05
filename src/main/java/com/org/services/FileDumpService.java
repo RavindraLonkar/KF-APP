@@ -167,8 +167,8 @@ public class FileDumpService {
 						pGR_Production.setPr_Time(customPGR_Production.getPrTime());
 						pGR_Production.setCr_Week(customPGR_Production.getPrWeek());
 						pGR_Production.setCr_Day(customPGR_Production.getPrDay());
-						//pGR_Production.setCn_pryear(customPGR_Production.getPrYear());
 						pGR_Production.setPr_Year(customPGR_Production.getPrYear());
+						//pGR_Production.setPr_Year(customPGR_Production.getPrYear());
 						pGR_Production.setCr_Shift(Integer.parseInt(shift));
 					}
 					
