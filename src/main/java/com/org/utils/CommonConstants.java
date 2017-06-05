@@ -13,6 +13,7 @@ public class CommonConstants {
 	public static final String KF_FILE_EXISTS="3";
 	
 
+	public static final String KF_SCUCESS_MESSAGE="File Uploaded Successfully.";
 	public static final String KF_FAIL_MESSAGE="Data Mismatch. Please Contact to Admin";
 	public static final String KF_FILE_EMPTY_MESSAGE="File Is Empty";
 	public static final String KF_FILE_EXISTS_MESSAGE="File Is Aready Uploaded";

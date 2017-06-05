@@ -81,7 +81,7 @@ public class FileDumpService {
 					}
 					
 					List<PGR_IssueNew> pgrdata = (List<PGR_IssueNew>) pGR_IssueNewRepository.save((List<PGR_IssueNew>) dataList);
-					response = new Response(CommonConstants.KF_SCUCESS, pgrdata,"PGR_IssueNew");
+					response = new Response(CommonConstants.KF_SCUCESS, pgrdata,CommonConstants.KF_SCUCESS_MESSAGE);
 				break;
 				case "PIR1_SCanOpcodeIssue":
 					dataList = this.getModels(PIR1_SCanOpcodeIssue.class);
@@ -99,7 +99,7 @@ public class FileDumpService {
 					}
 					
 					List<PIR1_SCanOpcodeIssue> pIR1_SCanOpcodeIssueNewList = (List<PIR1_SCanOpcodeIssue>) pIR1_SCanOpcodeIssueRepository.save((List<PIR1_SCanOpcodeIssue>) dataList);
-					response = new Response(CommonConstants.KF_SCUCESS, pIR1_SCanOpcodeIssueNewList,"PIR1_SCanOpcodeIssue");
+					response = new Response(CommonConstants.KF_SCUCESS, pIR1_SCanOpcodeIssueNewList,CommonConstants.KF_SCUCESS_MESSAGE);
 				break;
 				case "PIR2_SCanOpcodeIssue":
 					dataList = this.getModels(PIR2_SCanOpcodeIssue.class);
@@ -117,7 +117,7 @@ public class FileDumpService {
 					}
 					
 					List<PIR2_SCanOpcodeIssue> pIR2_SCanOpcodeIssueNewList = (List<PIR2_SCanOpcodeIssue>) pIR2_SCanOpcodeIssueRepository.save((List<PIR2_SCanOpcodeIssue>) dataList);
-					response = new Response(CommonConstants.KF_SCUCESS, pIR2_SCanOpcodeIssueNewList,"PIR2_SCanOpcodeIssue");
+					response = new Response(CommonConstants.KF_SCUCESS, pIR2_SCanOpcodeIssueNewList,CommonConstants.KF_SCUCESS_MESSAGE);
 
 				break;
 				case "PIR3_SCanOpcodeIssue":
@@ -136,7 +136,7 @@ public class FileDumpService {
 					}
 					
 					List<PIR3_SCanOpcodeIssue> pIR3_SCanOpcodeIssueNewList = (List<PIR3_SCanOpcodeIssue>) pIR3_SCanOpcodeIssueRepository.save((List<PIR3_SCanOpcodeIssue>) dataList);
-					response = new Response(CommonConstants.KF_SCUCESS, pIR3_SCanOpcodeIssueNewList,"PIR3_SCanOpcodeIssue");
+					response = new Response(CommonConstants.KF_SCUCESS, pIR3_SCanOpcodeIssueNewList,CommonConstants.KF_SCUCESS_MESSAGE);
 				break;
 				case "CONTAMINATION":
 					dataList = this.getModels(Contamination.class);
@@ -154,7 +154,7 @@ public class FileDumpService {
 					}
 					
 					List<Contamination> contaminationList = (List<Contamination>) contaminationRepository.save((List<Contamination>) dataList);
-					response = new Response(CommonConstants.KF_SCUCESS, contaminationList,"");
+					response = new Response(CommonConstants.KF_SCUCESS, contaminationList,CommonConstants.KF_SCUCESS_MESSAGE);
 
 				break;
 				case "PGR_Production":
@@ -173,7 +173,7 @@ public class FileDumpService {
 					}
 					
 					List<PGR_Production> pGR_ProductionList = (List<PGR_Production>) pGR_ProductionRepository.save((List<PGR_Production>) dataList);
-					response = new Response(CommonConstants.KF_SCUCESS, pGR_ProductionList,"");
+					response = new Response(CommonConstants.KF_SCUCESS, pGR_ProductionList,CommonConstants.KF_SCUCESS_MESSAGE);
 
 				break;
 				case "PGR_ReturnNew":
