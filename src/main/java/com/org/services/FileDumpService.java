@@ -140,9 +140,9 @@ public class FileDumpService {
 					
 					for (Contamination contamination : (List<Contamination>) dataList) {					
 						contamination.setCn_Time(customContamination.getPrTime());
-						contamination.setCn_prWeek(customContamination.getPrWeek());
-						contamination.setCn_prDay(customContamination.getPrDay());
-						contamination.setCn_prYear(customContamination.getPrYear());
+						contamination.setCn_prweek(customContamination.getPrWeek());
+						contamination.setCn_prday(customContamination.getPrDay());
+						contamination.setCn_pryear(customContamination.getPrYear());
 						contamination.setCn_Year(customContamination.getPrYear());
 						contamination.setCn_Shift(Integer.parseInt(shift));
 					}
