@@ -28,7 +28,7 @@ public class PGR_Production {
 	@Column private Double cr_Inoculation;
 	@Column private Double cr_Bottles;
 	@Column private char pr_Date;
-	@Column private char pr_Time;
+	@Column private String pr_Time;
 	@Column private Integer pr_Year;
 	@Column private char pr_Branchcode;
 	@Column private Integer plant_loc;
@@ -117,10 +117,10 @@ public class PGR_Production {
 	public void setPr_Date(char pr_Date) {
 		this.pr_Date = pr_Date;
 	}
-	public char getPr_Time() {
+	public String getPr_Time() {
 		return pr_Time;
 	}
-	public void setPr_Time(char pr_Time) {
+	public void setPr_Time(String pr_Time) {
 		this.pr_Time = pr_Time;
 	}
 	public Integer getPr_Year() {

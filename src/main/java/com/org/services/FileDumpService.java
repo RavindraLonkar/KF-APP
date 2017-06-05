@@ -12,11 +12,15 @@ import org.springframework.stereotype.Service;
 
 import com.org.models.Contamination;
 import com.org.models.PGR_IssueNew;
+import com.org.models.PGR_Production;
+import com.org.models.PGR_ReturnNew;
 import com.org.models.PIR1_SCanOpcodeIssue;
 import com.org.models.PIR2_SCanOpcodeIssue;
 import com.org.models.PIR3_SCanOpcodeIssue;
 import com.org.repositories.ContaminationRepository;
 import com.org.repositories.PGR_IssueNewRepository;
+import com.org.repositories.PGR_ProductionRepository;
+import com.org.repositories.PGR_ReturnNewRepository;
 import com.org.repositories.PIR1_SCanOpcodeIssueRepository;
 import com.org.repositories.PIR2_SCanOpcodeIssueRepository;
 import com.org.repositories.PIR3_SCanOpcodeIssueRepository;
@@ -33,6 +37,8 @@ public class FileDumpService {
 	@Autowired PIR2_SCanOpcodeIssueRepository pIR2_SCanOpcodeIssueRepository;
 	@Autowired PIR3_SCanOpcodeIssueRepository pIR3_SCanOpcodeIssueRepository;
 	@Autowired ContaminationRepository contaminationRepository;
+	@Autowired PGR_ProductionRepository pGR_ProductionRepository;
+	@Autowired PGR_ReturnNewRepository pGR_ReturnNewRepository;
 	
 	Response response=new Response();
 	
@@ -149,6 +155,44 @@ public class FileDumpService {
 					
 					List<Contamination> contaminationList = (List<Contamination>) contaminationRepository.save((List<Contamination>) dataList);
 					response = new Response(CommonConstants.KF_SCUCESS, contaminationList,"");
+
+				break;
+				case "PGR_Production":
+					dataList = this.getModels(PGR_Production.class);
+					CustomFileUtils<PGR_Production> customPGR_Production = new CustomFileUtils<PGR_Production>();
+					dataList = customPGR_Production.getMappedObjectList(fileContent, new PGR_Production(),
+							CommonConstants.CONTAMINATION_HEADER);
+					
+					for (PGR_Production pGR_Production : (List<PGR_Production>) dataList) {					
+						pGR_Production.setPr_Time(customPGR_Production.getPrTime());
+						pGR_Production.setCr_Week(customPGR_Production.getPrWeek());
+						pGR_Production.setCr_Day(customPGR_Production.getPrDay());
+						//pGR_Production.setCn_pryear(customPGR_Production.getPrYear());
+						pGR_Production.setPr_Year(customPGR_Production.getPrYear());
+						pGR_Production.setCr_Shift(Integer.parseInt(shift));
+					}
+					
+					List<PGR_Production> pGR_ProductionList = (List<PGR_Production>) pGR_ProductionRepository.save((List<PGR_Production>) dataList);
+					response = new Response(CommonConstants.KF_SCUCESS, pGR_ProductionList,"");
+
+				break;
+				case "PGR_ReturnNew":
+					dataList = this.getModels(PGR_ReturnNew.class);
+					CustomFileUtils<PGR_ReturnNew> customPGR_ReturnNew = new CustomFileUtils<PGR_ReturnNew>();
+					dataList = customPGR_ReturnNew.getMappedObjectList(fileContent, new PGR_ReturnNew(),
+							CommonConstants.CONTAMINATION_HEADER);
+					
+					for (PGR_ReturnNew pGR_ReturnNew : (List<PGR_ReturnNew>) dataList) {					
+						pGR_ReturnNew.setPr_Time(customPGR_ReturnNew.getPrTime());
+						pGR_ReturnNew.setPr_prweek(customPGR_ReturnNew.getPrWeek());
+						pGR_ReturnNew.setPr_Day(customPGR_ReturnNew.getPrDay());
+						pGR_ReturnNew.setPr_pryear(customPGR_ReturnNew.getPrYear());
+						pGR_ReturnNew.setPr_Year(customPGR_ReturnNew.getPrYear());
+						pGR_ReturnNew.setPr_Shift(Integer.parseInt(shift));
+					}
+					
+					List<PGR_ReturnNew> pGR_ReturnNewList = (List<PGR_ReturnNew>) pGR_ReturnNewRepository.save((List<PGR_ReturnNew>) dataList);
+					response = new Response(CommonConstants.KF_SCUCESS, pGR_ReturnNewList,"");
 
 				break;
 					default:

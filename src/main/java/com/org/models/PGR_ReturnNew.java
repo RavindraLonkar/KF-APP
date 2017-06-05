@@ -1,7 +1,5 @@
 package com.org.models;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -29,11 +27,11 @@ public class PGR_ReturnNew {
 	@Column private Double pr_Inoculation;
 	@Column private Double pr_Bottles;
 	@Column private String pr_Date;
-	@Column private Date pr_Time;
+	@Column private String pr_Time;
 	@Column private Integer pr_prweek;
 	@Column private Integer pr_prday;
 	@Column private Integer pr_prshift;
-	@Column private Double pr_pryear;
+	@Column private Integer pr_pryear;
 	@Column private Integer pr_Year;
 	@Column private char pr_Branchcode;
 	@Column private Integer plant_loc;
@@ -122,10 +120,10 @@ public class PGR_ReturnNew {
 	public void setPr_Date(String pr_Date) {
 		this.pr_Date = pr_Date;
 	}
-	public Date getPr_Time() {
+	public String getPr_Time() {
 		return pr_Time;
 	}
-	public void setPr_Time(Date pr_Time) {
+	public void setPr_Time(String pr_Time) {
 		this.pr_Time = pr_Time;
 	}
 	public Integer getPr_prweek() {
@@ -146,10 +144,10 @@ public class PGR_ReturnNew {
 	public void setPr_prshift(Integer pr_prshift) {
 		this.pr_prshift = pr_prshift;
 	}
-	public Double getPr_pryear() {
+	public Integer getPr_pryear() {
 		return pr_pryear;
 	}
-	public void setPr_pryear(Double pr_pryear) {
+	public void setPr_pryear(Integer pr_pryear) {
 		this.pr_pryear = pr_pryear;
 	}
 	public Integer getPr_Year() {
