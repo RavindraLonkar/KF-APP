@@ -47,7 +47,11 @@ public class CustomFileUtils<T> {
 	}
 	
 	public int getPrDay() {
-		return localCalendar.get(Calendar.DAY_OF_WEEK);
+		if(localCalendar.get(Calendar.DAY_OF_WEEK)==0){
+			return 7;
+		}else{
+			return localCalendar.get(Calendar.DAY_OF_WEEK)-1;
+		}
 	}
 	
 	public int getPrWeek() {
