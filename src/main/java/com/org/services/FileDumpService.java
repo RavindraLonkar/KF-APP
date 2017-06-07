@@ -11,21 +11,33 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.org.models.Contamination;
+import com.org.models.Delivery;
+import com.org.models.DeliveryToGreen_HouseNew1;
+import com.org.models.Discard;
+import com.org.models.Dispatch;
+import com.org.models.Dispatch_Return_Master;
 import com.org.models.PGR_IssueNew;
 import com.org.models.PGR_Production;
 import com.org.models.PGR_ReturnNew;
 import com.org.models.PIR1_SCanOpcodeIssue;
 import com.org.models.PIR2_SCanOpcodeIssue;
 import com.org.models.PIR3_SCanOpcodeIssue;
+import com.org.models.PIR_Issue;
 import com.org.models.PIR_Production;
 import com.org.models.PIR_ReturnNew;
 import com.org.repositories.ContaminationRepository;
+import com.org.repositories.DeliveryRepository;
+import com.org.repositories.DeliveryToGreen_HouseNew1Repository;
+import com.org.repositories.DiscardRepository;
+import com.org.repositories.DispatchRepository;
+import com.org.repositories.Dispatch_Return_MasterRepository;
 import com.org.repositories.PGR_IssueNewRepository;
 import com.org.repositories.PGR_ProductionRepository;
 import com.org.repositories.PGR_ReturnNewRepository;
 import com.org.repositories.PIR1_SCanOpcodeIssueRepository;
 import com.org.repositories.PIR2_SCanOpcodeIssueRepository;
 import com.org.repositories.PIR3_SCanOpcodeIssueRepository;
+import com.org.repositories.PIR_IssueRepository;
 import com.org.repositories.PIR_ProductionRepository;
 import com.org.repositories.PIR_ReturnNewRepository;
 import com.org.utils.CommonConstants;
@@ -45,6 +57,12 @@ public class FileDumpService {
 	@Autowired PGR_ReturnNewRepository pGR_ReturnNewRepository;
 	@Autowired PIR_ProductionRepository pIR_ProductionRepository;
 	@Autowired PIR_ReturnNewRepository pIR_ReturnNewRepository;
+	@Autowired PIR_IssueRepository pIR_IssueRepository;
+	@Autowired DiscardRepository discardRepository;
+	@Autowired DispatchRepository dispatchRepository;
+	@Autowired Dispatch_Return_MasterRepository dispatch_Return_MasterRepository;
+	@Autowired DeliveryRepository deliveryRepository;
+	@Autowired DeliveryToGreen_HouseNew1Repository deliveryToGreen_HouseNew1Repository;
 	
 	Response response=new Response();
 	
@@ -240,8 +258,121 @@ public class FileDumpService {
 					response = new Response(CommonConstants.KF_SCUCESS, pIR_ReturnNewList,"");
 
 				break;
+				case "PIR_Issue":
+					dataList = this.getModels(PIR_Issue.class);
+					CustomFileUtils<PIR_Issue> customPIR_Issue = new CustomFileUtils<PIR_Issue>();
+					dataList = customPIR_Issue.getMappedObjectList(fileContent, new PIR_Issue(),
+							CommonConstants.CONTAMINATION_HEADER);
+					
+					for (PIR_Issue pIR_Issue : (List<PIR_Issue>) dataList) {					
+						pIR_Issue.setPi_Time(customPIR_Issue.getPrTime());
+						pIR_Issue.setPi_prweek(customPIR_Issue.getPrWeek());
+						pIR_Issue.setPi_prday(customPIR_Issue.getPrDay());
+						pIR_Issue.setPi_pryear(customPIR_Issue.getPrYear());
+						pIR_Issue.setPi_pryear(customPIR_Issue.getPrYear());
+						pIR_Issue.setPi_Shift(Integer.parseInt(shift));
+					}
+					
+					List<PIR_Issue> pIR_IssueList = (List<PIR_Issue>) pIR_IssueRepository.save((List<PIR_Issue>) dataList);
+					response = new Response(CommonConstants.KF_SCUCESS, pIR_IssueList,CommonConstants.KF_SCUCESS_MESSAGE);
 
-					default:
+				break;
+				case "Discard":
+					dataList = this.getModels(Discard.class);
+					CustomFileUtils<Discard> customDiscard = new CustomFileUtils<Discard>();
+					dataList = customDiscard.getMappedObjectList(fileContent, new Discard(),
+							CommonConstants.CONTAMINATION_HEADER);
+					
+					for (Discard discard : (List<Discard>) dataList) {					
+						discard.setDc_Time(customDiscard.getPrTime());
+						discard.setDc_prweek(customDiscard.getPrWeek());
+						discard.setDc_prday(customDiscard.getPrDay());
+						discard.setDc_pryear(customDiscard.getPrYear());
+						discard.setDc_pryear(customDiscard.getPrYear());
+						discard.setDc_Shift(Integer.parseInt(shift));
+					}
+					
+					List<Discard> discardList = (List<Discard>) discardRepository.save((List<Discard>) dataList);
+					response = new Response(CommonConstants.KF_SCUCESS, discardList,"");
+
+				break;
+				case "Dispatch":
+					dataList = this.getModels(Dispatch.class);
+					CustomFileUtils<Dispatch> customDispatch = new CustomFileUtils<Dispatch>();
+					dataList = customDispatch.getMappedObjectList(fileContent, new Dispatch(),
+							CommonConstants.CONTAMINATION_HEADER);
+					
+					for (Dispatch dispatch : (List<Dispatch>) dataList) {					
+						dispatch.setDs_Time(customDispatch.getPrTime());
+						dispatch.setDs_prweek(customDispatch.getPrWeek());
+						dispatch.setDs_prday(customDispatch.getPrDay());
+						dispatch.setDs_pryear(customDispatch.getPrYear());
+						dispatch.setDs_pryear(customDispatch.getPrYear());
+						dispatch.setDs_Shift(Integer.parseInt(shift));
+					}
+					
+					List<Dispatch> dispatchList = (List<Dispatch>) dispatchRepository.save((List<Dispatch>) dataList);
+					response = new Response(CommonConstants.KF_SCUCESS, dispatchList,"");
+
+				break;
+				case "Dispatch_Return_Master":
+					dataList = this.getModels(Dispatch_Return_Master.class);
+					CustomFileUtils<Dispatch_Return_Master> customDispatch_Return_Master = new CustomFileUtils<Dispatch_Return_Master>();
+					dataList = customDispatch_Return_Master.getMappedObjectList(fileContent, new Dispatch_Return_Master(),
+							CommonConstants.CONTAMINATION_HEADER);
+					
+					for (Dispatch_Return_Master dispatch_Return_Master : (List<Dispatch_Return_Master>) dataList) {					
+						dispatch_Return_Master.setDs_Time(customDispatch_Return_Master.getPrTime());
+						dispatch_Return_Master.setDs_prweek(customDispatch_Return_Master.getPrWeek());
+						dispatch_Return_Master.setDs_prday(customDispatch_Return_Master.getPrDay());
+						dispatch_Return_Master.setDs_pryear(customDispatch_Return_Master.getPrYear());
+						dispatch_Return_Master.setDs_pryear(customDispatch_Return_Master.getPrYear());
+						dispatch_Return_Master.setDs_Shift(Integer.parseInt(shift));
+					}
+					
+					List<Dispatch_Return_Master> dispatch_Return_MasterList = (List<Dispatch_Return_Master>) dispatch_Return_MasterRepository.save((List<Dispatch_Return_Master>) dataList);
+					response = new Response(CommonConstants.KF_SCUCESS, dispatch_Return_MasterList,"");
+
+				break;
+				case "Delivery":
+					dataList = this.getModels(Delivery.class);
+					CustomFileUtils<Delivery> customDelivery = new CustomFileUtils<Delivery>();
+					dataList = customDelivery.getMappedObjectList(fileContent, new Delivery(),
+							CommonConstants.CONTAMINATION_HEADER);
+					
+					for (Delivery delivery : (List<Delivery>) dataList) {					
+						//delivery.setPr_Time(customDelivery.getPrTime());
+						delivery.setDl_prweek(customDelivery.getPrWeek());
+						delivery.setDl_prday(customDelivery.getPrDay());
+						delivery.setDl_pryear(customDelivery.getPrYear());
+						delivery.setDl_pryear(customDelivery.getPrYear());
+						delivery.setDl_shift(Integer.parseInt(shift));
+					}
+					
+					List<Delivery> deliveryList = (List<Delivery>) deliveryRepository.save((List<Delivery>) dataList);
+					response = new Response(CommonConstants.KF_SCUCESS, deliveryList,"");
+
+				break;
+				case "DeliveryToGreen_HouseNew1ToGreen_HouseNew1":
+					dataList = this.getModels(DeliveryToGreen_HouseNew1.class);
+					CustomFileUtils<DeliveryToGreen_HouseNew1> customDeliveryToGreen_HouseNew1 = new CustomFileUtils<DeliveryToGreen_HouseNew1>();
+					dataList = customDeliveryToGreen_HouseNew1.getMappedObjectList(fileContent, new DeliveryToGreen_HouseNew1(),
+							CommonConstants.CONTAMINATION_HEADER);
+					
+					for (DeliveryToGreen_HouseNew1 deliveryToGreen_HouseNew1 : (List<DeliveryToGreen_HouseNew1>) dataList) {					
+						deliveryToGreen_HouseNew1.setDl_Time(customDeliveryToGreen_HouseNew1.getPrTime());
+						//deliveryToGreen_HouseNew1.setDl_prWeek(customDeliveryToGreen_HouseNew1.getPrWeek());
+						//deliveryToGreen_HouseNew1.setDl_prday(customDeliveryToGreen_HouseNew1.getPrDay());
+						deliveryToGreen_HouseNew1.setDl_pryear(customDeliveryToGreen_HouseNew1.getPrYear());
+						deliveryToGreen_HouseNew1.setDl_pryear(customDeliveryToGreen_HouseNew1.getPrYear());
+						//deliveryToGreen_HouseNew1.setDl_shift(Integer.parseInt(shift));
+					}
+					
+					List<DeliveryToGreen_HouseNew1> deliveryToGreen_HouseNew1List = (List<DeliveryToGreen_HouseNew1>) deliveryToGreen_HouseNew1Repository.save((List<DeliveryToGreen_HouseNew1>) dataList);
+					response = new Response(CommonConstants.KF_SCUCESS, deliveryToGreen_HouseNew1List,"");
+
+				break;
+				default:
 					logger.info("No case match!");
 					response = new Response(CommonConstants.KF_FAIL, null, CommonConstants.KF_FILE_VALID_MESSAGE);
 			}
