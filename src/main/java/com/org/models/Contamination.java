@@ -19,19 +19,19 @@ public class Contamination {
 	@Column
 	private String Pgr_no;
 	@Column
-	private char Rack_Code;
+	private String Rack_Code;
 	@Column
 	private String Shelf_Code;
 	@Column
-	private long Block_Code;
+	private String Block_Code;
 	@Column
 	private String cn_Variety;
 	@Column
-	private char cn_Corb;
+	private String cn_Corb;
 	@Column
 	private Integer cn_Opcode;
 	@Column
-	private char cn_Stage;
+	private String cn_Stage;
 	@Column
 	private Integer cn_Week;
 	@Column
@@ -57,7 +57,7 @@ public class Contamination {
 	@Column
 	private char cn_Branchcode;	
 	@Column
-	private long cn_PlantLoc;
+	private long cn_Plantloc;
 	public long getCn_ID() {
 		return cn_ID;
 	}
@@ -70,10 +70,10 @@ public class Contamination {
 	public void setPgr_no(String pgr_no) {
 		Pgr_no = pgr_no;
 	}
-	public char getRack_Code() {
+	public String getRack_Code() {
 		return Rack_Code;
 	}
-	public void setRack_Code(char rack_Code) {
+	public void setRack_Code(String rack_Code) {
 		Rack_Code = rack_Code;
 	}
 	public String getShelf_Code() {
@@ -82,10 +82,10 @@ public class Contamination {
 	public void setShelf_Code(String shelf_Code) {
 		Shelf_Code = shelf_Code;
 	}
-	public long getBlock_Code() {
+	public String getBlock_Code() {
 		return Block_Code;
 	}
-	public void setBlock_Code(long block_Code) {
+	public void setBlock_Code(String block_Code) {
 		Block_Code = block_Code;
 	}
 	public String getCn_Variety() {
@@ -94,10 +94,10 @@ public class Contamination {
 	public void setCn_Variety(String cn_Variety) {
 		this.cn_Variety = cn_Variety;
 	}
-	public char getCn_Corb() {
+	public String getCn_Corb() {
 		return cn_Corb;
 	}
-	public void setCn_Corb(char cn_Corb) {
+	public void setCn_Corb(String cn_Corb) {
 		this.cn_Corb = cn_Corb;
 	}
 	public Integer getCn_Opcode() {
@@ -106,10 +106,10 @@ public class Contamination {
 	public void setCn_Opcode(Integer cn_Opcode) {
 		this.cn_Opcode = cn_Opcode;
 	}
-	public char getCn_Stage() {
+	public String getCn_Stage() {
 		return cn_Stage;
 	}
-	public void setCn_Stage(char cn_Stage) {
+	public void setCn_Stage(String cn_Stage) {
 		this.cn_Stage = cn_Stage;
 	}
 	public Integer getCn_Week() {
@@ -184,11 +184,11 @@ public class Contamination {
 	public void setCn_Branchcode(char cn_Branchcode) {
 		this.cn_Branchcode = cn_Branchcode;
 	}
-	public long getCn_PlantLoc() {
-		return cn_PlantLoc;
+	public long getCn_Plantloc() {
+		return cn_Plantloc;
 	}
-	public void setCn_PlantLoc(long cn_PlantLoc) {
-		this.cn_PlantLoc = cn_PlantLoc;
+	public void setCn_Plantloc(long cn_Plantloc) {
+		this.cn_Plantloc = cn_Plantloc;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;

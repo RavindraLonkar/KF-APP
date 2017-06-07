@@ -8,7 +8,7 @@ public class UploadGetController {
 	
     @GetMapping("/")
     public String index() {
-        return "fileupload";
+        return "fileUpload";
     }
 
     @GetMapping("/uploadStatus")
