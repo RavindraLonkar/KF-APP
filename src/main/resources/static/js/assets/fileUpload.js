@@ -13,19 +13,19 @@ $( document ).ready(function() {
         	var fileName =matchFileName($("#file").val().split("\\").pop(-1)).toUpperCase().trim();
         	switch(fileName){
 	        	case "PGR_ISSUE":
-	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PGR_IssueNew",tableHeaderObject.PGR_IssueNew);
+	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PGR_IssueNew",tableHeaderObject.PGR_IssueNew,fileName);
 	        	break;
 	        	case  "PIR1_SCanOpcodeIssue":
-	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PIR1_SCanOpcodeIssue");
+	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PIR1_SCanOpcodeIssue",fileName);
 	        	break;
 	        	case  "CONTAMINATION_HBT":
-	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"CONTAMINATION",tableHeaderObject.Contamination);
+	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"CONTAMINATION",tableHeaderObject.Contamination,fileName);
 	        	break;
 	        	case  "CONTAMINATION_FUNGUS":
-	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"CONTAMINATION",tableHeaderObject.Contamination);
+	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"CONTAMINATION",tableHeaderObject.Contamination,fileName);
 	        	break;
 	        	case  "CONTAMINATION_OTHER":
-	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"CONTAMINATION",tableHeaderObject.Contamination);
+	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"CONTAMINATION",tableHeaderObject.Contamination,fileName);
 		        break;
 	        	
 	        	default:  
@@ -36,7 +36,7 @@ $( document ).ready(function() {
     	}
     }); 
     
-    function ajaxFilePost(data,objectName,dataTableHeader){
+    function ajaxFilePost(data,objectName,dataTableHeader,tableName){
               
         $.ajax({
             type : "POST",
@@ -54,7 +54,7 @@ $( document ).ready(function() {
                 		return;
             		DataTableHeaderBind(dataTableHeader,objectName);
             		hideDataTable();
-                	datasetToDataTable(dataSet,objectName,dataTableColumns(dataTableHeader));
+                	datasetToDataTable(dataSet,objectName,dataTableColumns(dataTableHeader),tableName);
                 	BootstrapDialog.alert(result.resonCode);
             	}else{
             		BootstrapDialog.alert(result.resonCode);

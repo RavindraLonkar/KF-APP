@@ -1,7 +1,8 @@
-function datasetToDataTable(dataSet,objectName,dataTableHeader){
-	
+function datasetToDataTable(dataSet,objectName,dataTableHeader,tableName){
+
+	$('#tableName').empty();
+	$('#tableName').append("<h4><b>"+tableName+"</b></h4>");
 	$("#"+objectName+"").show();
-	
 	$("#"+objectName+"").dataTable( {
         "data": dataSet,
         "scrollX": true,
@@ -28,7 +29,7 @@ function dataTableColumns(dataTableHeader) {
 function DataTableHeaderBind(dataTableHeader,objectName){
 	
 	$('#dataTableDiv').empty();
-	
+
 	var tableHtml="<table id='"+objectName+"' class='table table-striped table-bordered' " +
 			"cellspacing='0' width='100%' th:fragment='"+objectName+'1'+"'><thead><tr>";
 	var dataHeaders = dataTableHeader.split(',');
