@@ -17,6 +17,8 @@ import com.org.models.PGR_ReturnNew;
 import com.org.models.PIR1_SCanOpcodeIssue;
 import com.org.models.PIR2_SCanOpcodeIssue;
 import com.org.models.PIR3_SCanOpcodeIssue;
+import com.org.models.PIR_Production;
+import com.org.models.PIR_ReturnNew;
 import com.org.repositories.ContaminationRepository;
 import com.org.repositories.PGR_IssueNewRepository;
 import com.org.repositories.PGR_ProductionRepository;
@@ -24,6 +26,8 @@ import com.org.repositories.PGR_ReturnNewRepository;
 import com.org.repositories.PIR1_SCanOpcodeIssueRepository;
 import com.org.repositories.PIR2_SCanOpcodeIssueRepository;
 import com.org.repositories.PIR3_SCanOpcodeIssueRepository;
+import com.org.repositories.PIR_ProductionRepository;
+import com.org.repositories.PIR_ReturnNewRepository;
 import com.org.utils.CommonConstants;
 import com.org.utils.CustomFileUtils;
 import com.org.utils.Response;
@@ -39,6 +43,8 @@ public class FileDumpService {
 	@Autowired ContaminationRepository contaminationRepository;
 	@Autowired PGR_ProductionRepository pGR_ProductionRepository;
 	@Autowired PGR_ReturnNewRepository pGR_ReturnNewRepository;
+	@Autowired PIR_ProductionRepository pIR_ProductionRepository;
+	@Autowired PIR_ReturnNewRepository pIR_ReturnNewRepository;
 	
 	Response response=new Response();
 	
@@ -196,6 +202,45 @@ public class FileDumpService {
 					response = new Response(CommonConstants.KF_SCUCESS, pGR_ReturnNewList,"");
 
 				break;
+				case "PIR_Production":
+					dataList = this.getModels(PIR_Production.class);
+					CustomFileUtils<PIR_Production> customPIR_Production = new CustomFileUtils<PIR_Production>();
+					dataList = customPIR_Production.getMappedObjectList(fileContent, new PIR_Production(),
+							CommonConstants.CONTAMINATION_HEADER);
+					
+					for (PIR_Production pIR_Production : (List<PIR_Production>) dataList) {					
+						pIR_Production.setPr_Time(customPIR_Production.getPrTime());
+						pIR_Production.setPr_Week(customPIR_Production.getPrWeek());
+						pIR_Production.setPr_Day(customPIR_Production.getPrDay());
+						pIR_Production.setPr_Year(customPIR_Production.getPrYear());
+						pIR_Production.setPr_Year(customPIR_Production.getPrYear());
+						pIR_Production.setPr_Shift(Integer.parseInt(shift));
+					}
+					
+					List<PIR_Production> pIR_ProductionList = (List<PIR_Production>) pIR_ProductionRepository.save((List<PIR_Production>) dataList);
+					response = new Response(CommonConstants.KF_SCUCESS, pIR_ProductionList,CommonConstants.KF_SCUCESS_MESSAGE);
+
+				break;
+				case "PIR_ReturnNew":
+					dataList = this.getModels(PIR_ReturnNew.class);
+					CustomFileUtils<PIR_ReturnNew> customPIR_ReturnNew = new CustomFileUtils<PIR_ReturnNew>();
+					dataList = customPIR_ReturnNew.getMappedObjectList(fileContent, new PIR_ReturnNew(),
+							CommonConstants.CONTAMINATION_HEADER);
+					
+					for (PIR_ReturnNew pIR_ReturnNew : (List<PIR_ReturnNew>) dataList) {					
+						pIR_ReturnNew.setPr_Time(customPIR_ReturnNew.getPrTime());
+						pIR_ReturnNew.setPr_prweek(customPIR_ReturnNew.getPrWeek());
+						pIR_ReturnNew.setPr_Day(customPIR_ReturnNew.getPrDay());
+						pIR_ReturnNew.setPr_pryear(customPIR_ReturnNew.getPrYear());
+						pIR_ReturnNew.setPr_Year(customPIR_ReturnNew.getPrYear());
+						pIR_ReturnNew.setPr_Shift(Integer.parseInt(shift));
+					}
+					
+					List<PIR_ReturnNew> pIR_ReturnNewList = (List<PIR_ReturnNew>) pIR_ReturnNewRepository.save((List<PIR_ReturnNew>) dataList);
+					response = new Response(CommonConstants.KF_SCUCESS, pIR_ReturnNewList,"");
+
+				break;
+
 					default:
 					logger.info("No case match!");
 					response = new Response(CommonConstants.KF_FAIL, null, CommonConstants.KF_FILE_VALID_MESSAGE);
