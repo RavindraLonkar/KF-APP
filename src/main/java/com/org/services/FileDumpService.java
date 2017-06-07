@@ -146,6 +146,7 @@ public class FileDumpService {
 					
 					for (Contamination contamination : (List<Contamination>) dataList) {					
 						contamination.setCn_Time(customContamination.getPrTime());
+						contamination.setCn_Date(customContamination.getDate());
 						contamination.setCn_prweek(customContamination.getPrWeek());
 						contamination.setCn_prday(customContamination.getPrDay());
 						contamination.setCn_pryear(customContamination.getPrYear());

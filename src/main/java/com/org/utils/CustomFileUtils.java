@@ -31,7 +31,7 @@ public class CustomFileUtils<T> {
 				map = new HashMap<String, String>();
 				String splitData[] = splitLines[i].split(",");
 				for (int j = 0; j < splitData.length; j++) {
-					map.put(splitHeader[j], splitData[j]);
+					map.put(splitHeader[j], splitData[j].trim());
 				}
 
 				Gson gson = new Gson();

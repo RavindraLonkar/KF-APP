@@ -52,6 +52,7 @@ $( document ).ready(function() {
             		var dataSet=result.data;
             		if(jQuery.isEmptyObject(dataSet))
                 		return;
+            		resetTabelData();
                 	datasetToDataTable(dataSet,objectName,dataTableColumns(dataTableHeader));
                 	BootstrapDialog.alert(result.resonCode);
             	}else{
