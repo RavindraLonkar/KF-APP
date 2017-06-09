@@ -186,7 +186,7 @@ public class FileDumpService {
 					dataList = this.getModels(PGR_Production.class);
 					CustomFileUtils<PGR_Production> customPGR_Production = new CustomFileUtils<PGR_Production>();
 					dataList = customPGR_Production.getMappedObjectList(fileContent, new PGR_Production(),
-							CommonConstants.CONTAMINATION_HEADER);
+							CommonConstants.PGR_PRODUCTION_HEADER);
 					
 					for (PGR_Production pGR_Production : (List<PGR_Production>) dataList) {					
 						pGR_Production.setPr_Time(customPGR_Production.getPrTime());
