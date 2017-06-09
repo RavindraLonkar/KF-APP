@@ -70,19 +70,6 @@ function checkFileContains(fileSplitValue){
 }
 
 
-function resetTabelData(){
-	$('#PGR_IssueNew').hide();
-	$('#PIR1_Scanopcodeissue').hide();
-	$('#PIR2_Scanopcodeissue').hide();
-	$('#PIR3_Scanopcodeissue').hide();
-	$('#CONTAMINATION').hide();
-	
-	//wrapper class hide
-	$('#PGR_IssueNew_wrapper').hide();
-	$('#PIR1_Scanopcodeissue_wrapper').hide();
-	$('#PIR2_Scanopcodeissue_wrapper').hide();
-	$('#PIR3_Scanopcodeissue_wrapper').hide();
-	$('#CONTAMINATION_wrapper').hide();
-	
-
+function hideDataTable(){
+	jQuery('#dataTableDiv').children('table').hide();
 }
