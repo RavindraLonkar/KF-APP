@@ -34,8 +34,8 @@ public class PGR_ReturnNew {
 	@Column private Integer pr_pryear;
 	@Column private Integer pr_Year;
 	@Column private char pr_Branchcode;
-	@Column private Integer plant_loc;
-	@Column private String block_code;	
+	@Column private Integer pr_Plantloc;
+	@Column private String pr_Blockcode;	
 	public long getPr_ID() {
 		return pr_ID;
 	}
@@ -162,17 +162,18 @@ public class PGR_ReturnNew {
 	public void setPr_Branchcode(char pr_Branchcode) {
 		this.pr_Branchcode = pr_Branchcode;
 	}
-	public Integer getPlant_loc() {
-		return plant_loc;
+	
+	public Integer getPr_Plantloc() {
+		return pr_Plantloc;
 	}
-	public void setPlant_loc(Integer plant_loc) {
-		this.plant_loc = plant_loc;
+	public void setPr_Plantloc(Integer pr_Plantloc) {
+		this.pr_Plantloc = pr_Plantloc;
 	}
-	public String getBlock_code() {
-		return block_code;
+	public String getPr_Blockcode() {
+		return pr_Blockcode;
 	}
-	public void setBlock_code(String block_code) {
-		this.block_code = block_code;
+	public void setPr_Blockcode(String pr_Blockcode) {
+		this.pr_Blockcode = pr_Blockcode;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;

@@ -16,18 +16,18 @@ public class PGR_Production {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column private long cr_ID;
 	@Column private String Pgr_No;
-	@Column private char Rack_Code;
+	@Column private String Rack_Code;
 	@Column private String Shelf_Code;
 	@Column private String cr_Variety;
-	@Column private char cr_Corb;
+	@Column private String cr_Corb;
 	@Column private Integer cr_Opcode;
-	@Column private char cr_Stage;
+	@Column private String cr_Stage;
 	@Column private Integer cr_Week;
 	@Column private Integer cr_Day;
 	@Column private Integer cr_Shift;
 	@Column private Double cr_Inoculation;
 	@Column private Double cr_Bottles;
-	@Column private char pr_Date;
+	@Column private String pr_Date;
 	@Column private String pr_Time;
 	@Column private Integer pr_Year;
 	@Column private char pr_Branchcode;
@@ -45,10 +45,10 @@ public class PGR_Production {
 	public void setPgr_No(String pgr_No) {
 		Pgr_No = pgr_No;
 	}
-	public char getRack_Code() {
+	public String getRack_Code() {
 		return Rack_Code;
 	}
-	public void setRack_Code(char rack_Code) {
+	public void setRack_Code(String rack_Code) {
 		Rack_Code = rack_Code;
 	}
 	public String getShelf_Code() {
@@ -63,10 +63,10 @@ public class PGR_Production {
 	public void setCr_Variety(String cr_Variety) {
 		this.cr_Variety = cr_Variety;
 	}
-	public char getCr_Corb() {
+	public String getCr_Corb() {
 		return cr_Corb;
 	}
-	public void setCr_Corb(char cr_Corb) {
+	public void setCr_Corb(String cr_Corb) {
 		this.cr_Corb = cr_Corb;
 	}
 	public Integer getCr_Opcode() {
@@ -75,10 +75,10 @@ public class PGR_Production {
 	public void setCr_Opcode(Integer cr_Opcode) {
 		this.cr_Opcode = cr_Opcode;
 	}
-	public char getCr_Stage() {
+	public String getCr_Stage() {
 		return cr_Stage;
 	}
-	public void setCr_Stage(char cr_Stage) {
+	public void setCr_Stage(String cr_Stage) {
 		this.cr_Stage = cr_Stage;
 	}
 	public Integer getCr_Week() {
@@ -111,10 +111,10 @@ public class PGR_Production {
 	public void setCr_Bottles(Double cr_Bottles) {
 		this.cr_Bottles = cr_Bottles;
 	}
-	public char getPr_Date() {
+	public String getPr_Date() {
 		return pr_Date;
 	}
-	public void setPr_Date(char pr_Date) {
+	public void setPr_Date(String pr_Date) {
 		this.pr_Date = pr_Date;
 	}
 	public String getPr_Time() {

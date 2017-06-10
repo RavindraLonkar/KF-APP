@@ -13,10 +13,16 @@ $( document ).ready(function() {
         	var fileName =matchFileName($("#file").val().split("\\").pop(-1)).toUpperCase().trim();
         	switch(fileName){
 	        	case "PGR_ISSUE":
-	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PGR_IssueNew",tableHeaderObject.PGR_ISSUNEW_HEADER,fileName);
+	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PGR_ISSUENEW",tableHeaderObject.PGR_ISSUNEW_HEADER,fileName);
 	        	break;
 	        	case  "PIR1_SCanOpcodeIssue":
-	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PIR1_SCanOpcodeIssue",fileName);
+	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PIR1_SCANOPCODEISSUE",fileName);
+	        	break;
+	        	case  "PIR2_SCanOpcodeIssue":
+	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PIR2_SCANOPCODEISSUE",fileName);
+	        	break;
+	        	case  "PIR3_SCanOpcodeIssue":
+	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PIR2_SCANOPCODEISSUE",fileName);
 	        	break;
 	        	case  "CONTAMINATION_HBT":
 	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"CONTAMINATION",tableHeaderObject.CONTAMINATION_HEADER,fileName);
@@ -27,10 +33,10 @@ $( document ).ready(function() {
 	        	case  "CONTAMINATION_OTHER":
 	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"CONTAMINATION",tableHeaderObject.CONTAMINATION_HEADER,fileName);
 		        break;
-	        	case  "PGR_RETURNNEW":
+	        	case  "PGR_RETURN":
 	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PGR_RETURNNEW",tableHeaderObject.PGR_RETURNNEW_HEADER,fileName);
 		        break;
-	        	case  "PGR_PRODUCTION":
+	        	case  "PGR PRODUCTION":
 	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PGR_PRODUCTION",tableHeaderObject.PGR_PRODUCTION_HEADER,fileName);
 		        break;
 	        	case  "PIR_RETURN":

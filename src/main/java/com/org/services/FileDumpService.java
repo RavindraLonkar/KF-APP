@@ -88,7 +88,7 @@ public class FileDumpService {
 			List<?> dataList = null;
 			
 			switch (objectName) {
-				case "PGR_IssueNew":
+				case "PGR_ISSUENEW":
 					dataList = this.getModels(PGR_IssueNew.class);
 					CustomFileUtils<PGR_IssueNew> customPGR_IssueNewUtils = new CustomFileUtils<PGR_IssueNew>();
 					dataList = customPGR_IssueNewUtils.getMappedObjectList(fileContent, new PGR_IssueNew(),
@@ -107,7 +107,7 @@ public class FileDumpService {
 					List<PGR_IssueNew> pgrdata = (List<PGR_IssueNew>) pGR_IssueNewRepository.save((List<PGR_IssueNew>) dataList);
 					response = new Response(CommonConstants.KF_SCUCESS, pgrdata,CommonConstants.KF_SCUCESS_MESSAGE);
 				break;
-				case "PIR1_SCanOpcodeIssue":
+				case "PIR1_SCANOPCODEISSUE":
 					dataList = this.getModels(PIR1_SCanOpcodeIssue.class);
 					CustomFileUtils<PIR1_SCanOpcodeIssue> customPIR1_SCanOpcodeIssueUtils = new CustomFileUtils<PIR1_SCanOpcodeIssue>();
 					dataList = customPIR1_SCanOpcodeIssueUtils.getMappedObjectList(fileContent, new PIR1_SCanOpcodeIssue(),
@@ -125,7 +125,7 @@ public class FileDumpService {
 					List<PIR1_SCanOpcodeIssue> pIR1_SCanOpcodeIssueNewList = (List<PIR1_SCanOpcodeIssue>) pIR1_SCanOpcodeIssueRepository.save((List<PIR1_SCanOpcodeIssue>) dataList);
 					response = new Response(CommonConstants.KF_SCUCESS, pIR1_SCanOpcodeIssueNewList,CommonConstants.KF_SCUCESS_MESSAGE);
 				break;
-				case "PIR2_SCanOpcodeIssue":
+				case "PIR2_SCANOPCODEISSUE":
 					dataList = this.getModels(PIR2_SCanOpcodeIssue.class);
 					CustomFileUtils<PIR2_SCanOpcodeIssue> customPIR2_SCanOpcodeIssueUtils = new CustomFileUtils<PIR2_SCanOpcodeIssue>();
 					dataList = customPIR2_SCanOpcodeIssueUtils.getMappedObjectList(fileContent, new PIR2_SCanOpcodeIssue(),
@@ -144,7 +144,7 @@ public class FileDumpService {
 					response = new Response(CommonConstants.KF_SCUCESS, pIR2_SCanOpcodeIssueNewList,CommonConstants.KF_SCUCESS_MESSAGE);
 
 				break;
-				case "PIR3_SCanOpcodeIssue":
+				case "PIR3_SCANOPCODEISSUE":
 					dataList = this.getModels(PIR3_SCanOpcodeIssue.class);
 					CustomFileUtils<PIR3_SCanOpcodeIssue> customPIR3_SCanOpcodeIssueUtils = new CustomFileUtils<PIR3_SCanOpcodeIssue>();
 					dataList = customPIR3_SCanOpcodeIssueUtils.getMappedObjectList(fileContent, new PIR3_SCanOpcodeIssue(),
@@ -182,7 +182,7 @@ public class FileDumpService {
 					response = new Response(CommonConstants.KF_SCUCESS, contaminationList,CommonConstants.KF_SCUCESS_MESSAGE);
 
 				break;
-				case "PGR_Production":
+				case "PGR_PRODUCTION":
 					dataList = this.getModels(PGR_Production.class);
 					CustomFileUtils<PGR_Production> customPGR_Production = new CustomFileUtils<PGR_Production>();
 					dataList = customPGR_Production.getMappedObjectList(fileContent, new PGR_Production(),
@@ -201,11 +201,11 @@ public class FileDumpService {
 					response = new Response(CommonConstants.KF_SCUCESS, pGR_ProductionList,CommonConstants.KF_SCUCESS_MESSAGE);
 
 				break;
-				case "PGR_ReturnNew":
+				case "PGR_RETURNNEW":
 					dataList = this.getModels(PGR_ReturnNew.class);
 					CustomFileUtils<PGR_ReturnNew> customPGR_ReturnNew = new CustomFileUtils<PGR_ReturnNew>();
 					dataList = customPGR_ReturnNew.getMappedObjectList(fileContent, new PGR_ReturnNew(),
-							CommonConstants.CONTAMINATION_HEADER);
+							CommonConstants.PGR_RETURNNEW_HEADER);
 					
 					for (PGR_ReturnNew pGR_ReturnNew : (List<PGR_ReturnNew>) dataList) {					
 						pGR_ReturnNew.setPr_Time(customPGR_ReturnNew.getPrTime());
@@ -220,11 +220,11 @@ public class FileDumpService {
 					response = new Response(CommonConstants.KF_SCUCESS, pGR_ReturnNewList,"");
 
 				break;
-				case "PIR_Production":
+				case "PIR_PRODUCTION":
 					dataList = this.getModels(PIR_Production.class);
 					CustomFileUtils<PIR_Production> customPIR_Production = new CustomFileUtils<PIR_Production>();
 					dataList = customPIR_Production.getMappedObjectList(fileContent, new PIR_Production(),
-							CommonConstants.CONTAMINATION_HEADER);
+							CommonConstants.PIR_PRODUCTION_HEADER);
 					
 					for (PIR_Production pIR_Production : (List<PIR_Production>) dataList) {					
 						pIR_Production.setPr_Time(customPIR_Production.getPrTime());
@@ -239,11 +239,11 @@ public class FileDumpService {
 					response = new Response(CommonConstants.KF_SCUCESS, pIR_ProductionList,CommonConstants.KF_SCUCESS_MESSAGE);
 
 				break;
-				case "PIR_ReturnNew":
+				case "PIR_RETURNNEW":
 					dataList = this.getModels(PIR_ReturnNew.class);
 					CustomFileUtils<PIR_ReturnNew> customPIR_ReturnNew = new CustomFileUtils<PIR_ReturnNew>();
 					dataList = customPIR_ReturnNew.getMappedObjectList(fileContent, new PIR_ReturnNew(),
-							CommonConstants.CONTAMINATION_HEADER);
+							CommonConstants.PIR_RETURN_HEADER);
 					
 					for (PIR_ReturnNew pIR_ReturnNew : (List<PIR_ReturnNew>) dataList) {					
 						pIR_ReturnNew.setPr_Time(customPIR_ReturnNew.getPrTime());
@@ -258,11 +258,11 @@ public class FileDumpService {
 					response = new Response(CommonConstants.KF_SCUCESS, pIR_ReturnNewList,"");
 
 				break;
-				case "PIR_Issue":
+				case "PIR_ISSUE":
 					dataList = this.getModels(PIR_Issue.class);
 					CustomFileUtils<PIR_Issue> customPIR_Issue = new CustomFileUtils<PIR_Issue>();
 					dataList = customPIR_Issue.getMappedObjectList(fileContent, new PIR_Issue(),
-							CommonConstants.CONTAMINATION_HEADER);
+							CommonConstants.PIR_ISSUE_HEADER);
 					
 					for (PIR_Issue pIR_Issue : (List<PIR_Issue>) dataList) {					
 						pIR_Issue.setPi_Time(customPIR_Issue.getPrTime());
@@ -277,11 +277,11 @@ public class FileDumpService {
 					response = new Response(CommonConstants.KF_SCUCESS, pIR_IssueList,CommonConstants.KF_SCUCESS_MESSAGE);
 
 				break;
-				case "Discard":
+				case "DISCARD":
 					dataList = this.getModels(Discard.class);
 					CustomFileUtils<Discard> customDiscard = new CustomFileUtils<Discard>();
 					dataList = customDiscard.getMappedObjectList(fileContent, new Discard(),
-							CommonConstants.CONTAMINATION_HEADER);
+							CommonConstants.DISCARD_HEADER);
 					
 					for (Discard discard : (List<Discard>) dataList) {					
 						discard.setDc_Time(customDiscard.getPrTime());
@@ -296,11 +296,11 @@ public class FileDumpService {
 					response = new Response(CommonConstants.KF_SCUCESS, discardList,"");
 
 				break;
-				case "Dispatch":
+				case "DISPATCH":
 					dataList = this.getModels(Dispatch.class);
 					CustomFileUtils<Dispatch> customDispatch = new CustomFileUtils<Dispatch>();
 					dataList = customDispatch.getMappedObjectList(fileContent, new Dispatch(),
-							CommonConstants.CONTAMINATION_HEADER);
+							CommonConstants.DISPATCH_HEADER);
 					
 					for (Dispatch dispatch : (List<Dispatch>) dataList) {					
 						dispatch.setDs_Time(customDispatch.getPrTime());
@@ -315,11 +315,11 @@ public class FileDumpService {
 					response = new Response(CommonConstants.KF_SCUCESS, dispatchList,"");
 
 				break;
-				case "Dispatch_Return_Master":
+				case "DISPATCH_RETURN_MASTER":
 					dataList = this.getModels(Dispatch_Return_Master.class);
 					CustomFileUtils<Dispatch_Return_Master> customDispatch_Return_Master = new CustomFileUtils<Dispatch_Return_Master>();
 					dataList = customDispatch_Return_Master.getMappedObjectList(fileContent, new Dispatch_Return_Master(),
-							CommonConstants.CONTAMINATION_HEADER);
+							CommonConstants.DISPATCH_RETURN_MASTER_HEADER);
 					
 					for (Dispatch_Return_Master dispatch_Return_Master : (List<Dispatch_Return_Master>) dataList) {					
 						dispatch_Return_Master.setDs_Time(customDispatch_Return_Master.getPrTime());
@@ -334,11 +334,11 @@ public class FileDumpService {
 					response = new Response(CommonConstants.KF_SCUCESS, dispatch_Return_MasterList,"");
 
 				break;
-				case "Delivery":
+				case "DELIVERY":
 					dataList = this.getModels(Delivery.class);
 					CustomFileUtils<Delivery> customDelivery = new CustomFileUtils<Delivery>();
 					dataList = customDelivery.getMappedObjectList(fileContent, new Delivery(),
-							CommonConstants.CONTAMINATION_HEADER);
+							CommonConstants.DELIVERY_HEADER);
 					
 					for (Delivery delivery : (List<Delivery>) dataList) {					
 						//delivery.setPr_Time(customDelivery.getPrTime());
@@ -353,11 +353,11 @@ public class FileDumpService {
 					response = new Response(CommonConstants.KF_SCUCESS, deliveryList,"");
 
 				break;
-				case "DeliveryToGreen_HouseNew1ToGreen_HouseNew1":
+				case "DELIVERYTOGREEN_HOUSENEW1":
 					dataList = this.getModels(DeliveryToGreen_HouseNew1.class);
 					CustomFileUtils<DeliveryToGreen_HouseNew1> customDeliveryToGreen_HouseNew1 = new CustomFileUtils<DeliveryToGreen_HouseNew1>();
 					dataList = customDeliveryToGreen_HouseNew1.getMappedObjectList(fileContent, new DeliveryToGreen_HouseNew1(),
-							CommonConstants.CONTAMINATION_HEADER);
+							CommonConstants.DELIVERYTOGREEN_HOUSENEW1_HEADER);
 					
 					for (DeliveryToGreen_HouseNew1 deliveryToGreen_HouseNew1 : (List<DeliveryToGreen_HouseNew1>) dataList) {					
 						deliveryToGreen_HouseNew1.setDl_Time(customDeliveryToGreen_HouseNew1.getPrTime());
