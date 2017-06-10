@@ -15,9 +15,9 @@ public class PGR_Production {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column private long cr_ID;
-	@Column private String Pgr_No;
-	@Column private String Rack_Code;
-	@Column private String Shelf_Code;
+	@Column private String pgr_No;
+	@Column private String rack_Code;
+	@Column private String shelf_Code;
 	@Column private String cr_Variety;
 	@Column private String cr_Corb;
 	@Column private Integer cr_Opcode;
@@ -30,6 +30,10 @@ public class PGR_Production {
 	@Column private String pr_Date;
 	@Column private String pr_Time;
 	@Column private Integer pr_Year;
+	@Column private int cr_prweek;
+	@Column private int cr_prday;
+	@Column private int cr_prshift;
+	@Column private	int cr_pryear;
 	@Column private char pr_Branchcode;
 	@Column private Integer plant_loc;
 	@Column private String block_code;	
@@ -39,23 +43,24 @@ public class PGR_Production {
 	public void setCr_ID(long cr_ID) {
 		this.cr_ID = cr_ID;
 	}
+	
 	public String getPgr_No() {
-		return Pgr_No;
+		return pgr_No;
 	}
 	public void setPgr_No(String pgr_No) {
-		Pgr_No = pgr_No;
+		this.pgr_No = pgr_No;
 	}
 	public String getRack_Code() {
-		return Rack_Code;
+		return rack_Code;
 	}
 	public void setRack_Code(String rack_Code) {
-		Rack_Code = rack_Code;
+		this.rack_Code = rack_Code;
 	}
 	public String getShelf_Code() {
-		return Shelf_Code;
+		return shelf_Code;
 	}
 	public void setShelf_Code(String shelf_Code) {
-		Shelf_Code = shelf_Code;
+		this.shelf_Code = shelf_Code;
 	}
 	public String getCr_Variety() {
 		return cr_Variety;
@@ -128,6 +133,30 @@ public class PGR_Production {
 	}
 	public void setPr_Year(Integer pr_Year) {
 		this.pr_Year = pr_Year;
+	}
+	public int getCr_prweek() {
+		return cr_prweek;
+	}
+	public void setCr_prweek(int cr_prweek) {
+		this.cr_prweek = cr_prweek;
+	}
+	public int getCr_prday() {
+		return cr_prday;
+	}
+	public void setCr_prday(int cr_prday) {
+		this.cr_prday = cr_prday;
+	}
+	public int getCr_prshift() {
+		return cr_prshift;
+	}
+	public void setCr_prshift(int cr_prshift) {
+		this.cr_prshift = cr_prshift;
+	}
+	public int getCr_pryear() {
+		return cr_pryear;
+	}
+	public void setCr_pryear(int cr_pryear) {
+		this.cr_pryear = cr_pryear;
 	}
 	public char getPr_Branchcode() {
 		return pr_Branchcode;

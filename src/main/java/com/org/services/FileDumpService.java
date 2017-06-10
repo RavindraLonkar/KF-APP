@@ -190,11 +190,12 @@ public class FileDumpService {
 					
 					for (PGR_Production pGR_Production : (List<PGR_Production>) dataList) {					
 						pGR_Production.setPr_Time(customPGR_Production.getPrTime());
-						pGR_Production.setCr_Week(customPGR_Production.getPrWeek());
-						pGR_Production.setCr_Day(customPGR_Production.getPrDay());
+						pGR_Production.setPr_Date(customPGR_Production.getDate());
 						pGR_Production.setPr_Year(customPGR_Production.getPrYear());
-						//pGR_Production.setPr_Year(customPGR_Production.getPrYear());
-						pGR_Production.setCr_Shift(Integer.parseInt(shift));
+						pGR_Production.setCr_prweek(customPGR_Production.getPrWeek());
+						pGR_Production.setCr_prday(customPGR_Production.getPrDay());
+						pGR_Production.setCr_pryear(customPGR_Production.getPrYear());
+						pGR_Production.setCr_prshift(Integer.parseInt(shift));
 					}
 					
 					List<PGR_Production> pGR_ProductionList = (List<PGR_Production>) pGR_ProductionRepository.save((List<PGR_Production>) dataList);
