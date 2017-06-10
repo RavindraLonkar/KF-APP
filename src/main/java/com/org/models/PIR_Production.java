@@ -15,20 +15,27 @@ public class PIR_Production {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column private long pr_ID;
 	@Column private String pr_Variety;
-	@Column private char pr_Corb;
+	@Column private String pr_Corb;
 	@Column private Integer pr_Opcode;
-	@Column private char pr_Stage;
+	@Column private String pr_Stage;
 	@Column private Integer pr_Week;
 	@Column private Integer pr_Day;
 	@Column private Integer pr_Shift;
 	@Column private Integer pr_Inoculation;
 	@Column private Integer pr_Bottles;
-	@Column private char pr_Date;
+	@Column private String pr_Date;
 	@Column private String pr_Time;
 	@Column private Integer pr_Year;
-	@Column private char pr_Brachcode;
-	@Column private Integer plant_loc;
-	@Column private String block_code;
+	@Column private Integer pr_pryear;
+	@Column private Integer pr_prweek;
+	@Column private Integer pr_prday;
+	@Column private Integer pr_prshift;
+	@Column private String pr_Brachcode;
+	@Column private Integer pr_Plantloc;
+	@Column private String pr_Blockcode;
+	@Column private String pr_PIRno;
+	@Column private String pr_Rackcode;
+	@Column private String pr_Shelfcode;
 	public long getPr_ID() {
 		return pr_ID;
 	}
@@ -41,24 +48,14 @@ public class PIR_Production {
 	public void setPr_Variety(String pr_Variety) {
 		this.pr_Variety = pr_Variety;
 	}
-	public char getPr_Corb() {
-		return pr_Corb;
-	}
-	public void setPr_Corb(char pr_Corb) {
-		this.pr_Corb = pr_Corb;
-	}
+	
 	public Integer getPr_Opcode() {
 		return pr_Opcode;
 	}
 	public void setPr_Opcode(Integer pr_Opcode) {
 		this.pr_Opcode = pr_Opcode;
 	}
-	public char getPr_Stage() {
-		return pr_Stage;
-	}
-	public void setPr_Stage(char pr_Stage) {
-		this.pr_Stage = pr_Stage;
-	}
+	
 	public Integer getPr_Week() {
 		return pr_Week;
 	}
@@ -89,12 +86,7 @@ public class PIR_Production {
 	public void setPr_Bottles(Integer pr_Bottles) {
 		this.pr_Bottles = pr_Bottles;
 	}
-	public char getPr_Date() {
-		return pr_Date;
-	}
-	public void setPr_Date(char pr_Date) {
-		this.pr_Date = pr_Date;
-	}
+	
 	public String getPr_Time() {
 		return pr_Time;
 	}
@@ -107,23 +99,84 @@ public class PIR_Production {
 	public void setPr_Year(Integer pr_Year) {
 		this.pr_Year = pr_Year;
 	}
-	public char getPr_Brachcode() {
+	
+	public String getPr_Corb() {
+		return pr_Corb;
+	}
+	public void setPr_Corb(String pr_Corb) {
+		this.pr_Corb = pr_Corb;
+	}
+	public String getPr_Stage() {
+		return pr_Stage;
+	}
+	public void setPr_Stage(String pr_Stage) {
+		this.pr_Stage = pr_Stage;
+	}
+	public String getPr_Date() {
+		return pr_Date;
+	}
+	public void setPr_Date(String pr_Date) {
+		this.pr_Date = pr_Date;
+	}
+	public Integer getPr_pryear() {
+		return pr_pryear;
+	}
+	public void setPr_pryear(Integer pr_pryear) {
+		this.pr_pryear = pr_pryear;
+	}
+	public Integer getPr_prweek() {
+		return pr_prweek;
+	}
+	public void setPr_prweek(Integer pr_prweek) {
+		this.pr_prweek = pr_prweek;
+	}
+	public Integer getPr_prday() {
+		return pr_prday;
+	}
+	public void setPr_prday(Integer pr_prday) {
+		this.pr_prday = pr_prday;
+	}
+	public Integer getPr_prshift() {
+		return pr_prshift;
+	}
+	public void setPr_prshift(Integer pr_prshift) {
+		this.pr_prshift = pr_prshift;
+	}
+	public String getPr_Brachcode() {
 		return pr_Brachcode;
 	}
-	public void setPr_Brachcode(char pr_Brachcode) {
+	public void setPr_Brachcode(String pr_Brachcode) {
 		this.pr_Brachcode = pr_Brachcode;
 	}
-	public Integer getPlant_loc() {
-		return plant_loc;
+	public Integer getPr_Plantloc() {
+		return pr_Plantloc;
 	}
-	public void setPlant_loc(Integer plant_loc) {
-		this.plant_loc = plant_loc;
+	public void setPr_Plantloc(Integer pr_Plantloc) {
+		this.pr_Plantloc = pr_Plantloc;
 	}
-	public String getBlock_code() {
-		return block_code;
+	public String getPr_Blockcode() {
+		return pr_Blockcode;
 	}
-	public void setBlock_code(String block_code) {
-		this.block_code = block_code;
+	public void setPr_Blockcode(String pr_Blockcode) {
+		this.pr_Blockcode = pr_Blockcode;
+	}
+	public String getPr_PIRno() {
+		return pr_PIRno;
+	}
+	public void setPr_PIRno(String pr_PIRno) {
+		this.pr_PIRno = pr_PIRno;
+	}
+	public String getPr_Rackcode() {
+		return pr_Rackcode;
+	}
+	public void setPr_Rackcode(String pr_Rackcode) {
+		this.pr_Rackcode = pr_Rackcode;
+	}
+	public String getPr_Shelfcode() {
+		return pr_Shelfcode;
+	}
+	public void setPr_Shelfcode(String pr_Shelfcode) {
+		this.pr_Shelfcode = pr_Shelfcode;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
