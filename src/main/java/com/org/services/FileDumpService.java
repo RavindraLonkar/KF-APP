@@ -210,15 +210,16 @@ public class FileDumpService {
 					
 					for (PGR_ReturnNew pGR_ReturnNew : (List<PGR_ReturnNew>) dataList) {					
 						pGR_ReturnNew.setPr_Time(customPGR_ReturnNew.getPrTime());
+						pGR_ReturnNew.setPr_Date(customPGR_ReturnNew.getDate());
 						pGR_ReturnNew.setPr_prweek(customPGR_ReturnNew.getPrWeek());
-						pGR_ReturnNew.setPr_Day(customPGR_ReturnNew.getPrDay());
+						pGR_ReturnNew.setPr_prday(customPGR_ReturnNew.getPrDay());
 						pGR_ReturnNew.setPr_pryear(customPGR_ReturnNew.getPrYear());
 						pGR_ReturnNew.setPr_Year(customPGR_ReturnNew.getPrYear());
-						pGR_ReturnNew.setPr_Shift(Integer.parseInt(shift));
+						pGR_ReturnNew.setPr_prshift(Integer.parseInt(shift));
 					}
 					
 					List<PGR_ReturnNew> pGR_ReturnNewList = (List<PGR_ReturnNew>) pGR_ReturnNewRepository.save((List<PGR_ReturnNew>) dataList);
-					response = new Response(CommonConstants.KF_SCUCESS, pGR_ReturnNewList,"");
+					response = new Response(CommonConstants.KF_SCUCESS, pGR_ReturnNewList,CommonConstants.KF_SCUCESS_MESSAGE);
 
 				break;
 				case "PIR_PRODUCTION":

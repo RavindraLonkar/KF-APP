@@ -14,9 +14,9 @@ public class PGR_ReturnNew {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column private long pr_ID;
-	@Column private String Pgr_No;
-	@Column private char Rack_Code;
-	@Column private String Shelf_Code;
+	@Column private String pgr_No;
+	@Column private char rack_Code;
+	@Column private String shelf_Code;
 	@Column private String pr_Variety;
 	@Column private String pr_CorB;
 	@Column private Integer pr_Opcode;
@@ -43,22 +43,22 @@ public class PGR_ReturnNew {
 		this.pr_ID = pr_ID;
 	}
 	public String getPgr_No() {
-		return Pgr_No;
+		return pgr_No;
 	}
 	public void setPgr_No(String pgr_No) {
-		Pgr_No = pgr_No;
+		this.pgr_No = pgr_No;
 	}
 	public char getRack_Code() {
-		return Rack_Code;
+		return rack_Code;
 	}
 	public void setRack_Code(char rack_Code) {
-		Rack_Code = rack_Code;
+		this.rack_Code = rack_Code;
 	}
 	public String getShelf_Code() {
-		return Shelf_Code;
+		return shelf_Code;
 	}
 	public void setShelf_Code(String shelf_Code) {
-		Shelf_Code = shelf_Code;
+		this.shelf_Code = shelf_Code;
 	}
 	public String getPr_Variety() {
 		return pr_Variety;
