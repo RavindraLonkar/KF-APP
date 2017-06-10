@@ -24,7 +24,7 @@ public class CustomFileUtils<T> {
 		Map<String, String> map = null;
 		List<T> dataList = new ArrayList<T>();
 
-		String splitLines[] = fileContent.split("\\r\\n");
+		String splitLines[] = fileContent.split("\\n");
 		String splitHeader[] = headerString.split(",");
 
 		for (int i = 0; i < splitLines.length; i++) {
