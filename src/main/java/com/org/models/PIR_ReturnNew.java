@@ -8,15 +8,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "PGR_Returnnew")
+@Table(name = "PIR_Return")
 public class PIR_ReturnNew {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column private long pr_ID;
-	@Column private String Pgr_No;
-	@Column private char Rack_Code;
-	@Column private String Shelf_Code;
+	@Column private String pr_PIRno;
+	@Column private char pr_Rackcode;
+	@Column private String pr_Shelfcode;
 	@Column private String pr_Variety;
 	@Column private String pr_Corb;
 	@Column private Integer pr_Opcode;
@@ -34,31 +34,25 @@ public class PIR_ReturnNew {
 	@Column private Integer pr_pryear;
 	@Column private Integer pr_Year;
 	@Column private char pr_Branchcode;
-	@Column private Integer plant_loc;
-	@Column private String block_code;
+	@Column private Integer pr_Plantloc;
+	@Column private String pr_Blockcode;
 	public long getPr_ID() {
 		return pr_ID;
 	}
 	public void setPr_ID(long pr_ID) {
 		this.pr_ID = pr_ID;
 	}
-	public String getPgr_No() {
-		return Pgr_No;
+	public char getPr_Rackcode() {
+		return pr_Rackcode;
 	}
-	public void setPgr_No(String pgr_No) {
-		Pgr_No = pgr_No;
+	public void setPr_Rackcode(char pr_Rackcode) {
+		this.pr_Rackcode = pr_Rackcode;
 	}
-	public char getRack_Code() {
-		return Rack_Code;
+	public String getPr_Shelfcode() {
+		return pr_Shelfcode;
 	}
-	public void setRack_Code(char rack_Code) {
-		Rack_Code = rack_Code;
-	}
-	public String getShelf_Code() {
-		return Shelf_Code;
-	}
-	public void setShelf_Code(String shelf_Code) {
-		Shelf_Code = shelf_Code;
+	public void setPr_Shelfcode(String pr_Shelfcode) {
+		this.pr_Shelfcode = pr_Shelfcode;
 	}
 	public String getPr_Variety() {
 		return pr_Variety;
@@ -162,17 +156,23 @@ public class PIR_ReturnNew {
 	public void setPr_Branchcode(char pr_Branchcode) {
 		this.pr_Branchcode = pr_Branchcode;
 	}
-	public Integer getPlant_loc() {
-		return plant_loc;
+	public Integer getPr_Plantloc() {
+		return pr_Plantloc;
 	}
-	public void setPlant_loc(Integer plant_loc) {
-		this.plant_loc = plant_loc;
+	public void setPr_Plantloc(Integer pr_Plantloc) {
+		this.pr_Plantloc = pr_Plantloc;
 	}
-	public String getBlock_code() {
-		return block_code;
+	public String getPr_Blockcode() {
+		return pr_Blockcode;
 	}
-	public void setBlock_code(String block_code) {
-		this.block_code = block_code;
+	public void setPr_Blockcode(String pr_Blockcode) {
+		this.pr_Blockcode = pr_Blockcode;
+	}
+	public String getPr_PIRno() {
+		return pr_PIRno;
+	}
+	public void setPr_PIRno(String pr_PIRno) {
+		this.pr_PIRno = pr_PIRno;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;

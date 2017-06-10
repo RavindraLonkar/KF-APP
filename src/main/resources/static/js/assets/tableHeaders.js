@@ -4,7 +4,7 @@ var tableHeaderObject ={
     "PGR_PRODUCTION_HEADER" : "cr_ID,plant_loc,pgr_No,rack_Code,shelf_Code,block_code,pr_Branchcode,cr_Variety,cr_Corb,cr_Opcode,cr_Stage,cr_Week,cr_Day,cr_Shift,cr_Inoculation,cr_Bottles,pr_Date,pr_Time,pr_Year,cr_prweek,cr_prday,cr_prshift,cr_pryear",
     "PGR_RETURNNEW_HEADER" : "pr_ID,pr_Plantloc,pgr_No,rack_Code,shelf_Code,pr_Blockcode,pr_Branchcode,pr_Variety,pr_CorB,pr_Opcode,pr_Stage,pr_Week,pr_Day,pr_Shift,pr_Inoculation,pr_Bottles,pr_Date,pr_Time,pr_prweek,pr_prday,pr_prshift,pr_pryear",
    
-    "PIR_RETURN_HEADER" : "pr_ID,pr_Plantloc,pr_PIRno,pr_Rackcode,pr_ShelfCode,pr_Blockcode,pr_Branchcode,pr_Variety,pr_Corb,pr_Opcode,pr_Stage,pr_Week,pr_Day,pr_Shift,pr_Inoculation,pr_Bottles",
+    "PIR_RETURN_HEADER" : "pr_ID,pr_Plantloc,pr_PIRno,pr_Rackcode,pr_Shelfcode,pr_Blockcode,pr_Branchcode,pr_Variety,pr_Corb,pr_Opcode,pr_Stage,pr_Week,pr_Day,pr_Shift,pr_Inoculation,pr_Bottles,pr_Date,pr_Time,pr_Year,pr_prweek,pr_prday,pr_prshift,pr_pryear",
     "PIR_PRODUCTION_HEADER" : "pr_ID,pr_Plantloc,pr_PIRno,pr_Rackcode,pr_Shelfcode,pr_Blockcode,pr_Brachcode,pr_Variety,pr_Corb,pr_Opcode,pr_Stage,pr_Week,pr_Day,pr_Shift,pr_Inoculation,pr_Bottles,pr_prweek,pr_prday,pr_prshift,pr_pryear",
     "PIR_ISSUE_HEADER" : "pi_ID,pi_Plantloc,pi_PIR_No,pi_Rack_Code,pi_Shelfcode,pi_Blockcode,pi_Branchcode,pi_Variety,pi_Corb,pi_Opcode,pi_Stage,pi_Week,pi_Day,pi_Shift,pi_Inoculation,pi_Bottles",
     

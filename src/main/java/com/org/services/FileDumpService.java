@@ -182,7 +182,7 @@ public class FileDumpService {
 					response = new Response(CommonConstants.KF_SCUCESS, pIR_IssueList,CommonConstants.KF_SCUCESS_MESSAGE);
 
 				break;
-				case "PIR_RETURNNEW":
+				case "PIR_RETURN":
 					dataList = this.getModels(PIR_ReturnNew.class);
 					CustomFileUtils<PIR_ReturnNew> customPIR_ReturnNew = new CustomFileUtils<PIR_ReturnNew>();
 					dataList = customPIR_ReturnNew.getMappedObjectList(fileContent, new PIR_ReturnNew(),
@@ -190,15 +190,16 @@ public class FileDumpService {
 					
 					for (PIR_ReturnNew pIR_ReturnNew : (List<PIR_ReturnNew>) dataList) {					
 						pIR_ReturnNew.setPr_Time(customPIR_ReturnNew.getPrTime());
+						pIR_ReturnNew.setPr_Date(customPIR_ReturnNew.getDate());
 						pIR_ReturnNew.setPr_prweek(customPIR_ReturnNew.getPrWeek());
-						pIR_ReturnNew.setPr_Day(customPIR_ReturnNew.getPrDay());
+						pIR_ReturnNew.setPr_prday(customPIR_ReturnNew.getPrDay());
 						pIR_ReturnNew.setPr_pryear(customPIR_ReturnNew.getPrYear());
 						pIR_ReturnNew.setPr_Year(customPIR_ReturnNew.getPrYear());
-						pIR_ReturnNew.setPr_Shift(Integer.parseInt(shift));
+						pIR_ReturnNew.setPr_prshift(Integer.parseInt(shift));
 					}
 					
 					List<PIR_ReturnNew> pIR_ReturnNewList = (List<PIR_ReturnNew>) pIR_ReturnNewRepository.save((List<PIR_ReturnNew>) dataList);
-					response = new Response(CommonConstants.KF_SCUCESS, pIR_ReturnNewList,"");
+					response = new Response(CommonConstants.KF_SCUCESS, pIR_ReturnNewList,CommonConstants.KF_SCUCESS_MESSAGE);
 
 				break;
 				case "PGR_PRODUCTION":
