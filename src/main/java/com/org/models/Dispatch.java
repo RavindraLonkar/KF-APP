@@ -15,12 +15,12 @@ public class Dispatch {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column private long ds_ID;
 	@Column private String Pgr_no;
-	@Column private char Rack_Code;
-	@Column private String Shelf_Code;
+	@Column private String rack_Code;
+	@Column private String shelf_Code;
 	@Column private String ds_Variety;
-	@Column private char ds_Corb;
+	@Column private String ds_Corb;
 	@Column private Integer ds_Opcode;
-	@Column private char ds_Stage;
+	@Column private String ds_Stage;
 	@Column private Integer ds_Week;
 	@Column private Integer ds_Day;
 	@Column private Integer ds_Shift;
@@ -34,8 +34,9 @@ public class Dispatch {
 	@Column private Integer ds_Year;
 	@Column private String branch_code;
 	@Column private String ds_tblno;
-	@Column private Integer plant_loc;
-	@Column private String block_code;	
+	@Column private Integer dc_Plantloc;
+	@Column private String dc_Blockcode;
+	@Column private Integer ds_prshift;
 	public long getDs_ID() {
 		return ds_ID;
 	}
@@ -48,17 +49,17 @@ public class Dispatch {
 	public void setPgr_no(String pgr_no) {
 		Pgr_no = pgr_no;
 	}
-	public char getRack_Code() {
-		return Rack_Code;
+	public String getRack_Code() {
+		return rack_Code;
 	}
-	public void setRack_Code(char rack_Code) {
-		Rack_Code = rack_Code;
+	public void setRack_Code(String rack_Code) {
+		this.rack_Code = rack_Code;
 	}
 	public String getShelf_Code() {
-		return Shelf_Code;
+		return shelf_Code;
 	}
 	public void setShelf_Code(String shelf_Code) {
-		Shelf_Code = shelf_Code;
+		this.shelf_Code = shelf_Code;
 	}
 	public String getDs_Variety() {
 		return ds_Variety;
@@ -66,11 +67,14 @@ public class Dispatch {
 	public void setDs_Variety(String ds_Variety) {
 		this.ds_Variety = ds_Variety;
 	}
-	public char getDs_Corb() {
+	public String getDs_Corb() {
 		return ds_Corb;
 	}
-	public void setDs_Corb(char ds_Corb) {
+	public void setDs_Corb(String ds_Corb) {
 		this.ds_Corb = ds_Corb;
+	}
+	public void setDs_Stage(String ds_Stage) {
+		this.ds_Stage = ds_Stage;
 	}
 	public Integer getDs_Opcode() {
 		return ds_Opcode;
@@ -78,11 +82,8 @@ public class Dispatch {
 	public void setDs_Opcode(Integer ds_Opcode) {
 		this.ds_Opcode = ds_Opcode;
 	}
-	public char getDs_Stage() {
+	public String getDs_Stage() {
 		return ds_Stage;
-	}
-	public void setDs_Stage(char ds_Stage) {
-		this.ds_Stage = ds_Stage;
 	}
 	public Integer getDs_Week() {
 		return ds_Week;
@@ -162,17 +163,23 @@ public class Dispatch {
 	public void setDs_tblno(String ds_tblno) {
 		this.ds_tblno = ds_tblno;
 	}
-	public Integer getPlant_loc() {
-		return plant_loc;
+	public Integer getDc_Plantloc() {
+		return dc_Plantloc;
 	}
-	public void setPlant_loc(Integer plant_loc) {
-		this.plant_loc = plant_loc;
+	public void setDc_Plantloc(Integer dc_Plantloc) {
+		this.dc_Plantloc = dc_Plantloc;
 	}
-	public String getBlock_code() {
-		return block_code;
+	public String getDc_Blockcode() {
+		return dc_Blockcode;
 	}
-	public void setBlock_code(String block_code) {
-		this.block_code = block_code;
+	public void setDc_Blockcode(String dc_Blockcode) {
+		this.dc_Blockcode = dc_Blockcode;
+	}
+	public Integer getDs_prshift() {
+		return ds_prshift;
+	}
+	public void setDs_prshift(Integer ds_prshift) {
+		this.ds_prshift = ds_prshift;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;

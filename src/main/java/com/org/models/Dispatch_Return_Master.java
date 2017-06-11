@@ -32,8 +32,12 @@ public class Dispatch_Return_Master {
 	@Column private Integer ds_Year;
 	@Column private char ds_Branchcode;
 	@Column private String ds_tblno;
-	@Column private Integer plant_loc;
-	@Column private String block_code;
+	@Column private Integer ds_Plantloc;
+	@Column private String ds_Blockcode;
+	@Column private String ds_Rackcode;
+	@Column private String ds_Shelfcode;
+	@Column private Integer ds_prshift;
+
 	public long getDs_ID() {
 		return ds_ID;
 	}
@@ -148,17 +152,35 @@ public class Dispatch_Return_Master {
 	public void setDs_tblno(String ds_tblno) {
 		this.ds_tblno = ds_tblno;
 	}
-	public Integer getPlant_loc() {
-		return plant_loc;
+	public Integer getDs_Plantloc() {
+		return ds_Plantloc;
 	}
-	public void setPlant_loc(Integer plant_loc) {
-		this.plant_loc = plant_loc;
+	public void setDs_Plantloc(Integer ds_Plantloc) {
+		this.ds_Plantloc = ds_Plantloc;
 	}
-	public String getBlock_code() {
-		return block_code;
+	public String getDs_Blockcode() {
+		return ds_Blockcode;
 	}
-	public void setBlock_code(String block_code) {
-		this.block_code = block_code;
+	public void setDs_Blockcode(String ds_Blockcode) {
+		this.ds_Blockcode = ds_Blockcode;
+	}
+	public String getDs_Rackcode() {
+		return ds_Rackcode;
+	}
+	public void setDs_Rackcode(String ds_Rackcode) {
+		this.ds_Rackcode = ds_Rackcode;
+	}
+	public String getDs_Shelfcode() {
+		return ds_Shelfcode;
+	}
+	public void setDs_Shelfcode(String ds_Shelfcode) {
+		this.ds_Shelfcode = ds_Shelfcode;
+	}
+	public Integer getDs_prshift() {
+		return ds_prshift;
+	}
+	public void setDs_prshift(Integer ds_prshift) {
+		this.ds_prshift = ds_prshift;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;

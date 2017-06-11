@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "PGR_Issuenew")
+@Table(name = "PIR_Issue")
 public class PIR_Issue {
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -30,8 +30,15 @@ public class PIR_Issue {
 	@Column private Integer pi_prshift;
 	@Column private Integer pi_pryear;
 	@Column private char pi_Branchcode;
-	@Column private Integer plant_loc;
-	@Column private String block_code;	
+	@Column private Integer pi_Plantloc;
+	@Column private String pi_Blockcode;
+	@Column private Integer pi_Year;
+	@Column private String pi_PIR_no;
+	@Column private String pi_Rack_Code;
+	@Column private String pi_Shelfcode;
+	
+	
+	
 	public long getPi_ID() {
 		return pi_ID;
 	}
@@ -134,17 +141,42 @@ public class PIR_Issue {
 	public void setPi_Branchcode(char pi_Branchcode) {
 		this.pi_Branchcode = pi_Branchcode;
 	}
-	public Integer getPlant_loc() {
-		return plant_loc;
+	
+	public Integer getPi_Plantloc() {
+		return pi_Plantloc;
 	}
-	public void setPlant_loc(Integer plant_loc) {
-		this.plant_loc = plant_loc;
+	public void setPi_Plantloc(Integer pi_Plantloc) {
+		this.pi_Plantloc = pi_Plantloc;
 	}
-	public String getBlock_code() {
-		return block_code;
+	public String getPi_Blockcode() {
+		return pi_Blockcode;
 	}
-	public void setBlock_code(String block_code) {
-		this.block_code = block_code;
+	public void setPi_Blockcode(String pi_Blockcode) {
+		this.pi_Blockcode = pi_Blockcode;
+	}
+	public Integer getPi_Year() {
+		return pi_Year;
+	}
+	public void setPi_Year(Integer pi_Year) {
+		this.pi_Year = pi_Year;
+	}
+	public String getPi_PIR_no() {
+		return pi_PIR_no;
+	}
+	public void setPi_PIR_no(String pi_PIR_no) {
+		this.pi_PIR_no = pi_PIR_no;
+	}
+	public String getPi_Rack_Code() {
+		return pi_Rack_Code;
+	}
+	public void setPi_Rack_Code(String pi_Rack_Code) {
+		this.pi_Rack_Code = pi_Rack_Code;
+	}
+	public String getPi_Shelfcode() {
+		return pi_Shelfcode;
+	}
+	public void setPi_Shelfcode(String pi_Shelfcode) {
+		this.pi_Shelfcode = pi_Shelfcode;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;

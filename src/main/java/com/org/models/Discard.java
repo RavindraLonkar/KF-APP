@@ -14,13 +14,13 @@ public class Discard {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column private Integer dc_ID;
-	@Column private String Pgr_No;
-	@Column private char Rack_Code;
-	@Column private String Shelf_Code;
+	@Column private String pgr_No;
+	@Column private String rack_Code;
+	@Column private String shelf_Code;
 	@Column private String dc_Variety;
-	@Column private char dc_Corb;
+	@Column private String dc_Corb;
 	@Column private Integer dc_Opcode;
-	@Column private char dc_Stage;
+	@Column private String dc_Stage;
 	@Column private Integer dc_Week;
 	@Column private Integer dc_Day;
 	@Column private Integer dc_Shift;
@@ -33,8 +33,10 @@ public class Discard {
 	@Column private Integer dc_pryear;
 	@Column private Integer dc_Year;
 	@Column private String dc_branch_code;
-	@Column private Integer plant_loc;
-	@Column private String block_code;	
+	@Column private Integer dc_Plantloc;
+	@Column private String dc_Blockcode;
+	@Column private Integer dc_prshift;
+	
 	public Integer getDc_ID() {
 		return dc_ID;
 	}
@@ -42,22 +44,22 @@ public class Discard {
 		this.dc_ID = dc_ID;
 	}
 	public String getPgr_No() {
-		return Pgr_No;
+		return pgr_No;
 	}
 	public void setPgr_No(String pgr_No) {
-		Pgr_No = pgr_No;
+		this.pgr_No = pgr_No;
 	}
-	public char getRack_Code() {
-		return Rack_Code;
+	public String getRack_Code() {
+		return rack_Code;
 	}
-	public void setRack_Code(char rack_Code) {
-		Rack_Code = rack_Code;
+	public void setRack_Code(String rack_Code) {
+		this.rack_Code = rack_Code;
 	}
 	public String getShelf_Code() {
-		return Shelf_Code;
+		return shelf_Code;
 	}
 	public void setShelf_Code(String shelf_Code) {
-		Shelf_Code = shelf_Code;
+		this.shelf_Code = shelf_Code;
 	}
 	public String getDc_Variety() {
 		return dc_Variety;
@@ -65,10 +67,10 @@ public class Discard {
 	public void setDc_Variety(String dc_Variety) {
 		this.dc_Variety = dc_Variety;
 	}
-	public char getDc_Corb() {
+	public String getDc_Corb() {
 		return dc_Corb;
 	}
-	public void setDc_Corb(char dc_Corb) {
+	public void setDc_Corb(String dc_Corb) {
 		this.dc_Corb = dc_Corb;
 	}
 	public Integer getDc_Opcode() {
@@ -77,10 +79,10 @@ public class Discard {
 	public void setDc_Opcode(Integer dc_Opcode) {
 		this.dc_Opcode = dc_Opcode;
 	}
-	public char getDc_Stage() {
+	public String getDc_Stage() {
 		return dc_Stage;
 	}
-	public void setDc_Stage(char dc_Stage) {
+	public void setDc_Stage(String dc_Stage) {
 		this.dc_Stage = dc_Stage;
 	}
 	public Integer getDc_Week() {
@@ -152,23 +154,28 @@ public class Discard {
 	public String getDc_branch_code() {
 		return dc_branch_code;
 	}
-	public Integer getPlant_loc() {
-		return plant_loc;
-	}
-	public void setPlant_loc(Integer plant_loc) {
-		this.plant_loc = plant_loc;
-	}
-	public String getBlock_code() {
-		return block_code;
-	}
-	public void setBlock_code(String block_code) {
-		this.block_code = block_code;
-	}
 	public void setDc_branch_code(String dc_branch_code) {
 		this.dc_branch_code = dc_branch_code;
+	}
+	public Integer getDc_Plantloc() {
+		return dc_Plantloc;
+	}
+	public void setDc_Plantloc(Integer dc_Plantloc) {
+		this.dc_Plantloc = dc_Plantloc;
+	}
+	public String getDc_Blockcode() {
+		return dc_Blockcode;
+	}
+	public void setDc_Blockcode(String dc_Blockcode) {
+		this.dc_Blockcode = dc_Blockcode;
+	}
+	public Integer getDc_prshift() {
+		return dc_prshift;
+	}
+	public void setDc_prshift(Integer dc_prshift) {
+		this.dc_prshift = dc_prshift;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
 }

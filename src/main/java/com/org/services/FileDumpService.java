@@ -171,11 +171,12 @@ public class FileDumpService {
 					
 					for (PIR_Issue pIR_Issue : (List<PIR_Issue>) dataList) {					
 						pIR_Issue.setPi_Time(customPIR_Issue.getPrTime());
+						pIR_Issue.setPi_Date(customPIR_Issue.getDate());
 						pIR_Issue.setPi_prweek(customPIR_Issue.getPrWeek());
 						pIR_Issue.setPi_prday(customPIR_Issue.getPrDay());
 						pIR_Issue.setPi_pryear(customPIR_Issue.getPrYear());
-						pIR_Issue.setPi_pryear(customPIR_Issue.getPrYear());
-						pIR_Issue.setPi_Shift(Integer.parseInt(shift));
+						pIR_Issue.setPi_Year(customPIR_Issue.getPrYear());
+						pIR_Issue.setPi_prshift(Integer.parseInt(shift));
 					}
 					
 					List<PIR_Issue> pIR_IssueList = (List<PIR_Issue>) pIR_IssueRepository.save((List<PIR_Issue>) dataList);
@@ -289,34 +290,36 @@ public class FileDumpService {
 					
 					for (Discard discard : (List<Discard>) dataList) {					
 						discard.setDc_Time(customDiscard.getPrTime());
+						discard.setDc_Date(customDiscard.getDate());
 						discard.setDc_prweek(customDiscard.getPrWeek());
 						discard.setDc_prday(customDiscard.getPrDay());
+						discard.setDc_Year(customDiscard.getPrYear());
 						discard.setDc_pryear(customDiscard.getPrYear());
-						discard.setDc_pryear(customDiscard.getPrYear());
-						discard.setDc_Shift(Integer.parseInt(shift));
+						discard.setDc_prshift(Integer.parseInt(shift));
 					}
 					
 					List<Discard> discardList = (List<Discard>) discardRepository.save((List<Discard>) dataList);
-					response = new Response(CommonConstants.KF_SCUCESS, discardList,"");
+					response = new Response(CommonConstants.KF_SCUCESS, discardList,CommonConstants.KF_SCUCESS_MESSAGE);
 
 				break;
 				case "DISPATCH":
 					dataList = this.getModels(Dispatch.class);
 					CustomFileUtils<Dispatch> customDispatch = new CustomFileUtils<Dispatch>();
 					dataList = customDispatch.getMappedObjectList(fileContent, new Dispatch(),
-							CommonConstants.DISPATCH_HEADER);
+							CommonConstants.DISPATCH_ISSUE_HEADER);
 					
 					for (Dispatch dispatch : (List<Dispatch>) dataList) {					
 						dispatch.setDs_Time(customDispatch.getPrTime());
+						dispatch.setDs_Date(customDispatch.getDate());
 						dispatch.setDs_prweek(customDispatch.getPrWeek());
 						dispatch.setDs_prday(customDispatch.getPrDay());
+						dispatch.setDs_Year(customDispatch.getPrYear());
 						dispatch.setDs_pryear(customDispatch.getPrYear());
-						dispatch.setDs_pryear(customDispatch.getPrYear());
-						dispatch.setDs_Shift(Integer.parseInt(shift));
+						dispatch.setDs_prshift(Integer.parseInt(shift));
 					}
 					
 					List<Dispatch> dispatchList = (List<Dispatch>) dispatchRepository.save((List<Dispatch>) dataList);
-					response = new Response(CommonConstants.KF_SCUCESS, dispatchList,"");
+					response = new Response(CommonConstants.KF_SCUCESS, dispatchList,CommonConstants.KF_SCUCESS_MESSAGE);
 
 				break;
 				case "DISPATCH_RETURN_MASTER":
@@ -327,15 +330,16 @@ public class FileDumpService {
 					
 					for (Dispatch_Return_Master dispatch_Return_Master : (List<Dispatch_Return_Master>) dataList) {					
 						dispatch_Return_Master.setDs_Time(customDispatch_Return_Master.getPrTime());
+						dispatch_Return_Master.setDs_Date(customDispatch_Return_Master.getDate());
 						dispatch_Return_Master.setDs_prweek(customDispatch_Return_Master.getPrWeek());
 						dispatch_Return_Master.setDs_prday(customDispatch_Return_Master.getPrDay());
+						dispatch_Return_Master.setDs_Year(customDispatch_Return_Master.getPrYear());
 						dispatch_Return_Master.setDs_pryear(customDispatch_Return_Master.getPrYear());
-						dispatch_Return_Master.setDs_pryear(customDispatch_Return_Master.getPrYear());
-						dispatch_Return_Master.setDs_Shift(Integer.parseInt(shift));
+						dispatch_Return_Master.setDs_prshift(Integer.parseInt(shift));
 					}
 					
 					List<Dispatch_Return_Master> dispatch_Return_MasterList = (List<Dispatch_Return_Master>) dispatch_Return_MasterRepository.save((List<Dispatch_Return_Master>) dataList);
-					response = new Response(CommonConstants.KF_SCUCESS, dispatch_Return_MasterList,"");
+					response = new Response(CommonConstants.KF_SCUCESS, dispatch_Return_MasterList,CommonConstants.KF_SCUCESS_MESSAGE);
 
 				break;
 				case "DELIVERY":

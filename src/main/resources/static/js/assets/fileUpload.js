@@ -48,11 +48,11 @@ $( document ).ready(function() {
 	        	case  "PIR_ISSUE":
 	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PIR_ISSUE",tableHeaderObject.PIR_ISSUE_HEADER,fileName);
 		        break;
-	        	case  "DISPATCH_RETURN_MASTER":
+	        	case  "DISPATCH_RETURN":
 	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"DISPATCH_RETURN_MASTER",tableHeaderObject.DISPATCH_RETURN_MASTER_HEADER,fileName);
 		        break;
-	        	case  "DISPATCH":
-	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"DISPATCH",tableHeaderObject.DISPATCH_HEADER,fileName);
+	        	case  "DISPATCH_ISSUE":
+	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"DISPATCH",tableHeaderObject.DISPATCH_ISSUE_HEADER,fileName);
 		        break;
 	        	case  "DISCARD":
 	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"DISCARD",tableHeaderObject.DISCARD_HEADER,fileName);
