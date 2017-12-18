@@ -16,13 +16,13 @@ $( document ).ready(function() {
 	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PGR_ISSUENEW",tableHeaderObject.PGR_ISSUNEW_HEADER,fileName);
 	        	break;
 	        	case  "PIR1_SCanOpcodeIssue":
-	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PIR1_SCANOPCODEISSUE",fileName);
+	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PIR1_SCANOPCODEISSUE",tableHeaderObject.PIR1_SCANOPCODEISSUE_HEADER,fileName);
 	        	break;
 	        	case  "PIR2_SCanOpcodeIssue":
-	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PIR2_SCANOPCODEISSUE",fileName);
+	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PIR2_SCANOPCODEISSUE",tableHeaderObject.PIR2_SCANOPCODEISSUE_HEADER,fileName);
 	        	break;
 	        	case  "PIR3_SCanOpcodeIssue":
-	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PIR2_SCANOPCODEISSUE",fileName);
+	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PIR2_SCANOPCODEISSUE",tableHeaderObject.PIR3_SCANOPCODEISSUE_HEADER,fileName);
 	        	break;
 	        	case  "CONTAMINATION_HBT":
 	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"CONTAMINATION",tableHeaderObject.CONTAMINATION_HEADER,fileName);
