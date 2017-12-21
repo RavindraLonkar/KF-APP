@@ -17,6 +17,7 @@ var tableHeaderObject = {
 	"PIR1_SCANOPCODEISSUE_HEADER" : "pi_ID,plant_loc,pi_Scnopcode,pi_PIR_No,pi_Branchcode,pi_Variety,pi_Corb,pi_Opcode,pi_Stage,pi_Week,pi_Day,pi_Shift,pi_Inoculation,pi_Bottles,pi_Date,pi_Time,pi_prweek,pi_prday,pi_prshift,pi_pryear",
 	"PIR2_SCANOPCODEISSUE_HEADER" : "pi_ID,plant_loc,pi_Scnopcode,pi_PIR_No,pi_Branchcode,pi_Variety,pi_Corb,pi_Opcode,pi_Stage,pi_Week,pi_Day,pi_Shift,pi_Inoculation,pi_Bottles,pi_Date,pi_Time,pi_prweek,pi_prday,pi_prshift,pi_pryear",
 	"PIR3_SCANOPCODEISSUE_HEADER" : "pi_ID,plant_loc,pi_Scnopcode,pi_PIR_No,pi_Branchcode,pi_Variety,pi_Corb,pi_Opcode,pi_Stage,pi_Week,pi_Day,pi_Shift,pi_Inoculation,pi_Bottles,pi_Date,pi_Time,pi_prweek,pi_prday,pi_prshift,pi_pryear"
+	
 };
 
 
