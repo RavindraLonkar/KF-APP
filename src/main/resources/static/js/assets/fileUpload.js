@@ -15,7 +15,7 @@ $( document ).ready(function() {
 	        	case "PGR_ISSUE":
 	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PGR_ISSUENEW",tableHeaderObject.PGR_ISSUNEW_HEADER,fileName);
 	        	break;
-	        	case  "PIR1_SCanOpcodeIssue":
+	        	case  "PIR1_SCANOPPCODEISSUE":
 	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PIR1_SCANOPCODEISSUE",tableHeaderObject.PIR1_SCANOPCODEISSUE_HEADER,fileName);
 	        	break;
 	        	case  "PIR2_SCanOpcodeIssue":

@@ -20,6 +20,10 @@ public class CommonConstants {
 	public static final String DELIVERY_HEADER = null;
 	public static final String DELIVERYTOGREEN_HOUSENEW1_HEADER = null;
 	
+	public static final String PIR1_SCANOPCODEISSUE="plant_loc,pi_PIR_No,pi_Scnopcode,pi_Branchcode,pi_Variety,pi_Corb,pi_Opcode,pi_Stage,pi_Week,pi_Day,pi_Shift,pi_Inoculation,pi_Bottles,pi_Date";
+	public static final String PIR2_SCANOPCODEISSUE="plant_loc,pi_PIR_No,pi_Scnopcode,pi_Branchcode,pi_Variety,pi_Corb,pi_Opcode,pi_Stage,pi_Week,pi_Day,pi_Shift,pi_Inoculation,pi_Bottles,pi_Date";
+	public static final String PIR3_SCANOPCODEISSUE="plant_loc,pi_PIR_No,pi_Scnopcode,pi_Branchcode,pi_Variety,pi_Corb,pi_Opcode,pi_Stage,pi_Week,pi_Day,pi_Shift,pi_Inoculation,pi_Bottles,pi_Date";
+	
 	public static final String TEXTDATA_HEADER = null;
 	
 	public static final String KF_SCUCESS="1";
