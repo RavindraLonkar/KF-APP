@@ -101,25 +101,29 @@ $( document ).ready(function() {
     	BootstrapDialog.alert('Please Upload Correct File!');
     }
     
-    function truncateFile(tableName){
-        
-        $.ajax({
-            type : "GET",
-            url : url + "truncate?tableName=" + tableName,
-            processData: false, //prevent jQuery from automatically transforming the data into a query string
-            contentType: false,
-            cache: false,
-            timeout: 600000,
-            success : function(result) {
-            	if(result.status=='1'){
-            		BootstrapDialog.alert(result.resonCode);
-            	}else{
-            		BootstrapDialog.alert(result.resonCode);
-            	}	
-            },
-            error : function(e) {
-                console.log("ERROR: ", e);
-            }
-        });
-    }
+    
+    $("#btnTruncate").click(function (event) {
+    
+    	var tableName =matchFileName($("#file").val().split("\\").pop(-1)).toUpperCase().trim();   
+    	        $.ajax({
+    	            type : "GET",
+    	            url : url + "truncate?tableName=" + tableName,
+    	            processData: false, //prevent jQuery from automatically transforming the data into a query string
+    	            contentType: false,
+    	            cache: false,
+    	            timeout: 600000,
+    	            success : function(result) {
+    	            	if(result.status=='1'){
+    	            		BootstrapDialog.alert(result.resonCode);
+    	            	}else{
+    	            		BootstrapDialog.alert(result.resonCode);
+    	            	}	
+    	            },
+    	            error : function(e) {
+    	                console.log("ERROR: ", e);
+    	            }
+    	        });
+    	    
+    });
+   
 })

@@ -74,7 +74,7 @@ function hideDataTable(){
 	jQuery('#dataTableDiv').children('table').hide();
 }
 
-/*$(document).ready(function() {
+$(document).ready(function() {
 	 
 	//truncate button hide 
 	$('#btnTruncate').hide();
@@ -95,6 +95,6 @@ function hideDataTable(){
 		}
 		
 	});
-})*/
+})
 
 

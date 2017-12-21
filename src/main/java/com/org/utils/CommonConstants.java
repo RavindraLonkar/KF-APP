@@ -37,5 +37,11 @@ public class CommonConstants {
 	public static final String KF_FILE_EMPTY_MESSAGE="File Is Empty";
 	public static final String KF_FILE_EXISTS_MESSAGE="File Is Aready Uploaded";
 	public static final String KF_FILE_VALID_MESSAGE="Please Upload Correct File";
+	public static final String KF_CONTACT_ADMIN_MESSAGE="Unable to truncate data. Please Contact to Admin";
+	public static final String KF_TRUNCATE_DATA_SCUCESS_MESSAGE="Data delete Successfully.";
+	
+	public static final String PIR1_SCANOPCODEISSUE_TABLE="PIR1_SCANOPPCODEISSUE";
+	public static final String PIR2_SCANOPCODEISSUE_TABLE="PIR2_SCANOPPCODEISSUE";
+	public static final String PIR3_SCANOPCODEISSUE_TABLE="PIR3_SCANOPPCODEISSUE";
 		
 }
