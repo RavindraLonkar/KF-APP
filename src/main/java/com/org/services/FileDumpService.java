@@ -88,7 +88,7 @@ public class FileDumpService {
 			List<?> dataList = null;
 			
 			switch (objectName) {
-				case "PIR1_SCANOPCODEISSUE":
+				case "PIR1_SCANOPPCODEISSUE":
 					dataList = this.getModels(PIR1_SCanOpcodeIssue.class);
 					CustomFileUtils<PIR1_SCanOpcodeIssue> customPIR1_SCanOpcodeIssueUtils = new CustomFileUtils<PIR1_SCanOpcodeIssue>();
 					dataList = customPIR1_SCanOpcodeIssueUtils.getMappedObjectList(fileContent, new PIR1_SCanOpcodeIssue(),
@@ -107,7 +107,7 @@ public class FileDumpService {
 					List<PIR1_SCanOpcodeIssue> pIR1_SCanOpcodeIssueNewList = (List<PIR1_SCanOpcodeIssue>) pIR1_SCanOpcodeIssueRepository.save((List<PIR1_SCanOpcodeIssue>) dataList);
 					response = new Response(CommonConstants.KF_SCUCESS, pIR1_SCanOpcodeIssueNewList,CommonConstants.KF_SCUCESS_MESSAGE);
 				break;
-				case "PIR2_SCANOPCODEISSUE":
+				case "PIR2_SCANOPPCODEISSUE":
 					dataList = this.getModels(PIR2_SCanOpcodeIssue.class);
 					CustomFileUtils<PIR2_SCanOpcodeIssue> customPIR2_SCanOpcodeIssueUtils = new CustomFileUtils<PIR2_SCanOpcodeIssue>();
 					dataList = customPIR2_SCanOpcodeIssueUtils.getMappedObjectList(fileContent, new PIR2_SCanOpcodeIssue(),
@@ -127,7 +127,7 @@ public class FileDumpService {
 					response = new Response(CommonConstants.KF_SCUCESS, pIR2_SCanOpcodeIssueNewList,CommonConstants.KF_SCUCESS_MESSAGE);
 
 				break;
-				case "PIR3_SCANOPCODEISSUE":
+				case "PIR3_SCANOPPCODEISSUE":
 					dataList = this.getModels(PIR3_SCanOpcodeIssue.class);
 					CustomFileUtils<PIR3_SCanOpcodeIssue> customPIR3_SCanOpcodeIssueUtils = new CustomFileUtils<PIR3_SCanOpcodeIssue>();
 					dataList = customPIR3_SCanOpcodeIssueUtils.getMappedObjectList(fileContent, new PIR3_SCanOpcodeIssue(),
