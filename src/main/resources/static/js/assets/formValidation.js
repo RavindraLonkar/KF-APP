@@ -73,3 +73,28 @@ function checkFileContains(fileSplitValue){
 function hideDataTable(){
 	jQuery('#dataTableDiv').children('table').hide();
 }
+
+/*$(document).ready(function() {
+	 
+	//truncate button hide 
+	$('#btnTruncate').hide();
+	
+	$("#file").on('change', function() {
+		
+		var fileName =matchFileName($("#file").val().split("\\").pop(-1)).toUpperCase().trim();
+		var extensionToCheck=$('#file').val().substring(($('#file').val()
+				.lastIndexOf('.') + 1));
+		
+		if(fileName!='' && extensionToCheck !='' && extensionToCheck == 'txt'){
+			if(fileName=='PIR1_SCANOPPCODEISSUE' ||fileName=='PIR2_SCANOPPCODEISSUE'||fileName=='PIR3_SCANOPPCODEISSUE'){
+				 $('#btnTruncate').show();
+			}
+			
+		}else{
+			 $('#btnTruncate').hide();
+		}
+		
+	});
+})*/
+
+

@@ -92,14 +92,15 @@ public class FileDumpService {
 					dataList = this.getModels(PIR1_SCanOpcodeIssue.class);
 					CustomFileUtils<PIR1_SCanOpcodeIssue> customPIR1_SCanOpcodeIssueUtils = new CustomFileUtils<PIR1_SCanOpcodeIssue>();
 					dataList = customPIR1_SCanOpcodeIssueUtils.getMappedObjectList(fileContent, new PIR1_SCanOpcodeIssue(),
-							CommonConstants.PGR_ISSUNEW_HEADER);
+							CommonConstants.PIR1_SCANOPCODEISSUE);
 					
 					for (PIR1_SCanOpcodeIssue pIR1_SCanOpcodeIssue : (List<PIR1_SCanOpcodeIssue>) dataList) {					
 						pIR1_SCanOpcodeIssue.setPi_Time(customPIR1_SCanOpcodeIssueUtils.getPrTime());
+						pIR1_SCanOpcodeIssue.setPi_Date(customPIR1_SCanOpcodeIssueUtils.getDate());
 						pIR1_SCanOpcodeIssue.setPi_prweek(customPIR1_SCanOpcodeIssueUtils.getPrWeek());
 						pIR1_SCanOpcodeIssue.setPi_prday(customPIR1_SCanOpcodeIssueUtils.getPrDay());
 						pIR1_SCanOpcodeIssue.setPi_pryear(customPIR1_SCanOpcodeIssueUtils.getPrYear());
-						//pIR1_SCanOpcodeIssue.setPi_Year(customPGR_IssueNewUtils.getPrYear());
+						//pIR1_SCanOpcodeIssue.setPi_Year(customPIR1_SCanOpcodeIssueUtils.getPrYear());
 						pIR1_SCanOpcodeIssue.setPi_prshift(Integer.parseInt(shift));
 					}
 					
@@ -110,10 +111,11 @@ public class FileDumpService {
 					dataList = this.getModels(PIR2_SCanOpcodeIssue.class);
 					CustomFileUtils<PIR2_SCanOpcodeIssue> customPIR2_SCanOpcodeIssueUtils = new CustomFileUtils<PIR2_SCanOpcodeIssue>();
 					dataList = customPIR2_SCanOpcodeIssueUtils.getMappedObjectList(fileContent, new PIR2_SCanOpcodeIssue(),
-							CommonConstants.PGR_ISSUNEW_HEADER);
+							CommonConstants.PIR2_SCANOPCODEISSUE);
 					
 					for (PIR2_SCanOpcodeIssue pIR2_SCanOpcodeIssue : (List<PIR2_SCanOpcodeIssue>) dataList) {					
 						pIR2_SCanOpcodeIssue.setPi_Time(customPIR2_SCanOpcodeIssueUtils.getPrTime());
+						pIR2_SCanOpcodeIssue.setPi_Date(customPIR2_SCanOpcodeIssueUtils.getDate());
 						pIR2_SCanOpcodeIssue.setPi_prweek(customPIR2_SCanOpcodeIssueUtils.getPrWeek());
 						pIR2_SCanOpcodeIssue.setPi_prday(customPIR2_SCanOpcodeIssueUtils.getPrDay());
 						pIR2_SCanOpcodeIssue.setPi_pryear(customPIR2_SCanOpcodeIssueUtils.getPrYear());
@@ -129,15 +131,16 @@ public class FileDumpService {
 					dataList = this.getModels(PIR3_SCanOpcodeIssue.class);
 					CustomFileUtils<PIR3_SCanOpcodeIssue> customPIR3_SCanOpcodeIssueUtils = new CustomFileUtils<PIR3_SCanOpcodeIssue>();
 					dataList = customPIR3_SCanOpcodeIssueUtils.getMappedObjectList(fileContent, new PIR3_SCanOpcodeIssue(),
-							CommonConstants.PGR_ISSUNEW_HEADER);
+							CommonConstants.PIR3_SCANOPCODEISSUE);
 					
 					for (PIR3_SCanOpcodeIssue pIR3_SCanOpcodeIssue : (List<PIR3_SCanOpcodeIssue>) dataList) {					
 						pIR3_SCanOpcodeIssue.setPi_Time(customPIR3_SCanOpcodeIssueUtils.getPrTime());
+						pIR3_SCanOpcodeIssue.setPi_Date(customPIR3_SCanOpcodeIssueUtils.getDate());
 						pIR3_SCanOpcodeIssue.setPi_prweek(customPIR3_SCanOpcodeIssueUtils.getPrWeek());
 						pIR3_SCanOpcodeIssue.setPi_prday(customPIR3_SCanOpcodeIssueUtils.getPrDay());
 						pIR3_SCanOpcodeIssue.setPi_pryear(customPIR3_SCanOpcodeIssueUtils.getPrYear());
 						//pIR3_SCanOpcodeIssue.setPi_Year(customPIR3_SCanOpcodeIssueUtils.getYear(pIR3_SCanOpcodeIssue.getPi_Week()));
-						pIR3_SCanOpcodeIssue.setPi_prshift(1);
+						pIR3_SCanOpcodeIssue.setPi_prshift(Integer.parseInt(shift));
 					}
 					
 					List<PIR3_SCanOpcodeIssue> pIR3_SCanOpcodeIssueNewList = (List<PIR3_SCanOpcodeIssue>) pIR3_SCanOpcodeIssueRepository.save((List<PIR3_SCanOpcodeIssue>) dataList);

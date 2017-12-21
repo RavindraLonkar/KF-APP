@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-     
+   
     var url = window.location;
     var validation=false;
     
@@ -15,13 +15,13 @@ $( document ).ready(function() {
 	        	case "PGR_ISSUE":
 	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PGR_ISSUENEW",tableHeaderObject.PGR_ISSUNEW_HEADER,fileName);
 	        	break;
-	        	case  "PIR1_SCanOpcodeIssue":
+	        	case  "PIR1_SCANOPPCODEISSUE":
 	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PIR1_SCANOPCODEISSUE",tableHeaderObject.PIR1_SCANOPCODEISSUE_HEADER,fileName);
 	        	break;
-	        	case  "PIR2_SCanOpcodeIssue":
+	        	case  "PIR2_SCANOPPCODEISSUE":
 	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PIR2_SCANOPCODEISSUE",tableHeaderObject.PIR2_SCANOPCODEISSUE_HEADER,fileName);
 	        	break;
-	        	case  "PIR3_SCanOpcodeIssue":
+	        	case  "PIR3_SCANOPPCODEISSUE":
 	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PIR2_SCANOPCODEISSUE",tableHeaderObject.PIR3_SCANOPCODEISSUE_HEADER,fileName);
 	        	break;
 	        	case  "CONTAMINATION_HBT":
@@ -99,5 +99,27 @@ $( document ).ready(function() {
     function notMatchCase(){
     	
     	BootstrapDialog.alert('Please Upload Correct File!');
+    }
+    
+    function truncateFile(tableName){
+        
+        $.ajax({
+            type : "GET",
+            url : url + "truncate?tableName=" + tableName,
+            processData: false, //prevent jQuery from automatically transforming the data into a query string
+            contentType: false,
+            cache: false,
+            timeout: 600000,
+            success : function(result) {
+            	if(result.status=='1'){
+            		BootstrapDialog.alert(result.resonCode);
+            	}else{
+            		BootstrapDialog.alert(result.resonCode);
+            	}	
+            },
+            error : function(e) {
+                console.log("ERROR: ", e);
+            }
+        });
     }
 })

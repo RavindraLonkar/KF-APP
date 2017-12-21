@@ -14,9 +14,9 @@ var tableHeaderObject = {
 	"DISPATCH_ISSUE_HEADER" : "ds_ID,dc_Plantloc,ds_tblno,rack_Code,shelf_Code,dc_Blockcode,branch_code,ds_Variety,ds_Corb,ds_Opcode,ds_Stage,ds_Week,ds_Day,ds_Shift,ds_Inoculation,ds_Bottles,ds_Date,ds_Time,ds_Year,ds_prweek,ds_prday,ds_prshift,ds_pryear",
 	"DISPATCH_RETURN_MASTER_HEADER" : "ds_ID,ds_Plantloc,ds_tblno,ds_Rackcode,ds_Shelfcode,ds_Blockcode,ds_Branchcode,ds_Variety,ds_Corb,ds_Opcode,ds_Stage,ds_Week,ds_Day,ds_Shift,ds_Inoculation,ds_Bottles,ds_Date,ds_Time,ds_Year,ds_prweek,ds_prday,ds_prshift,ds_pryear",
 
-	"PIR1_SCANOPCODEISSUE_HEADER" : "pi_ID,pi_Plantloc,pi_ScnOpcode,pi_PIR_No,pi_BranchCode,pi_Variety,pi_CorB,pi_Opcode,pi_Stage,pi_Week,pi_Day,pi_Shift,pi_Inoculation,pi_Bottles,pi_Date,pi_Time,pi_prWeek,pi_prDay,pi_prShift,pi_prYear",
-	"PIR2_SCANOPCODEISSUE_HEADER" : "pi_ID,pi_Plantloc,pi_ScnOpcode,pi_PIR_No,pi_BranchCode,pi_Variety,pi_CorB,pi_Opcode,pi_Stage,pi_Week,pi_Day,pi_Shift,pi_Inoculation,pi_Bottles,pi_Date,pi_Time,pi_prWeek,pi_prDay,pi_prShift,pi_prYear",
-	"PIR3_SCANOPCODEISSUE_HEADER" : "pi_ID,pi_Plantloc,pi_ScnOpcode,pi_PIR_No,pi_BranchCode,pi_Variety,pi_CorB,pi_Opcode,pi_Stage,pi_Week,pi_Day,pi_Shift,pi_Inoculation,pi_Bottles,pi_Date,pi_Time,pi_prWeek,pi_prDay,pi_prShift,pi_prYear,"
+	"PIR1_SCANOPCODEISSUE_HEADER" : "pi_ID,plant_loc,pi_Scnopcode,pi_PIR_No,pi_Branchcode,pi_Variety,pi_Corb,pi_Opcode,pi_Stage,pi_Week,pi_Day,pi_Shift,pi_Inoculation,pi_Bottles,pi_Date,pi_Time,pi_prweek,pi_prday,pi_prshift,pi_pryear",
+	"PIR2_SCANOPCODEISSUE_HEADER" : "pi_ID,plant_loc,pi_Scnopcode,pi_PIR_No,pi_Branchcode,pi_Variety,pi_Corb,pi_Opcode,pi_Stage,pi_Week,pi_Day,pi_Shift,pi_Inoculation,pi_Bottles,pi_Date,pi_Time,pi_prweek,pi_prday,pi_prshift,pi_pryear",
+	"PIR3_SCANOPCODEISSUE_HEADER" : "pi_ID,plant_loc,pi_Scnopcode,pi_PIR_No,pi_Branchcode,pi_Variety,pi_Corb,pi_Opcode,pi_Stage,pi_Week,pi_Day,pi_Shift,pi_Inoculation,pi_Bottles,pi_Date,pi_Time,pi_prweek,pi_prday,pi_prshift,pi_pryear"
 };
 
 
