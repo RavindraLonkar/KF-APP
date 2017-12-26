@@ -36,7 +36,10 @@ $( document ).ready(function() {
 	        	case  "PGR_RETURN":
 	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PGR_RETURNNEW",tableHeaderObject.PGR_RETURNNEW_HEADER,fileName);
 		        break;
-	        	case  "PGR PRODUCTION":
+	        	case  "PGR_PRODUCTION":
+	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PGR_PRODUCTION",tableHeaderObject.PGR_PRODUCTION_HEADER,fileName);
+          	    break;
+                case  "PGR PRODUCTION":
 	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PGR_PRODUCTION",tableHeaderObject.PGR_PRODUCTION_HEADER,fileName);
 		        break;
 	        	case  "PIR_RETURN":
