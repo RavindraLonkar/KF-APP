@@ -24,6 +24,9 @@ $( document ).ready(function() {
 	        	case  "PIR3_SCANOPPCODEISSUE":
 	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PIR3_SCANOPPCODEISSUE",tableHeaderObject.PIR3_SCANOPCODEISSUE_HEADER,fileName);
 	        	break;
+	        	case  "PIR4_SCANOPPCODEISSUE":
+	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"PIR4_SCANOPPCODEISSUE",tableHeaderObject.PIR4_SCANOPCODEISSUE_HEADER,fileName);
+	        	break;
 	        	case  "CONTAMINATION_HBT":
 	        		ajaxFilePost(new FormData($('#uploadFile')[0]),"CONTAMINATION",tableHeaderObject.CONTAMINATION_HEADER,fileName);
 	        	break;
