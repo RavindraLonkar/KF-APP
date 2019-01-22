@@ -52,7 +52,12 @@ public class CustomFileUtils<T> {
 	}
 
 	public int getPrWeek() {
-		return localCalendar.get(Calendar.WEEK_OF_YEAR);
+		if (localCalendar.get(Calendar.DAY_OF_WEEK) == 1) {
+			return localCalendar.get(Calendar.WEEK_OF_YEAR) - 1;
+		} else {
+			return localCalendar.get(Calendar.WEEK_OF_YEAR);
+		}
+
 	}
 
 	public String getPrTime() {
