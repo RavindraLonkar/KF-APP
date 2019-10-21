@@ -43,5 +43,6 @@ public class CommonConstants {
 	public static final String PIR1_SCANOPCODEISSUE_TABLE="PIR1_SCANOPPCODEISSUE";
 	public static final String PIR2_SCANOPCODEISSUE_TABLE="PIR2_SCANOPPCODEISSUE";
 	public static final String PIR3_SCANOPCODEISSUE_TABLE="PIR3_SCANOPPCODEISSUE";
+	public static final String PIR4_SCANOPCODEISSUE_TABLE="PIR4_SCANOPPCODEISSUE";
 		
 }

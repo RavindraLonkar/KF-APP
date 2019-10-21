@@ -86,8 +86,10 @@ $(document).ready(function() {
 				.lastIndexOf('.') + 1));
 		
 		if(fileName!='' && extensionToCheck !='' && extensionToCheck == 'txt'){
-			if(fileName=='PIR1_SCANOPPCODEISSUE' ||fileName=='PIR2_SCANOPPCODEISSUE'||fileName=='PIR3_SCANOPPCODEISSUE'){
+			if(fileName=='PIR1_SCANOPPCODEISSUE' ||fileName=='PIR2_SCANOPPCODEISSUE'||fileName=='PIR3_SCANOPPCODEISSUE' || fileName=='PIR4_SCANOPPCODEISSUE'){
 				 $('#btnTruncate').show();
+			}else{
+				 $('#btnTruncate').hide();
 			}
 			
 		}else{

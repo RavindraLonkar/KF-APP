@@ -59,6 +59,7 @@ public class FileDumpService {
 	PIR3_SCanOpcodeIssueRepository pIR3_SCanOpcodeIssueRepository;
 	@Autowired
 	PIR4_SCanOpcodeIssueRepository pIR4_SCanOpcodeIssueRepository;
+	@Autowired
 	ContaminationRepository contaminationRepository;
 	@Autowired
 	PGR_ProductionRepository pGR_ProductionRepository;

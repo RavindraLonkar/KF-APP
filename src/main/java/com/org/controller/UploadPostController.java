@@ -20,6 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.org.repositories.PIR1_SCanOpcodeIssueRepository;
 import com.org.repositories.PIR2_SCanOpcodeIssueRepository;
 import com.org.repositories.PIR3_SCanOpcodeIssueRepository;
+import com.org.repositories.PIR4_SCanOpcodeIssueRepository;
 import com.org.services.FileDumpService;
 import com.org.utils.CommonConstants;
 import com.org.utils.Response;
@@ -38,6 +39,8 @@ public class UploadPostController {
 	PIR2_SCanOpcodeIssueRepository pIR2_SCanOpcodeIssueRepository;
 	@Autowired
 	PIR3_SCanOpcodeIssueRepository pIR3_SCanOpcodeIssueRepository;
+	@Autowired
+	PIR4_SCanOpcodeIssueRepository pIR4_SCanOpcodeIssueRepository;
 
 	@Value("${file.upload.folderpath}")
 	private String UPLOADED_FOLDER;
@@ -103,6 +106,9 @@ public class UploadPostController {
 				response = new Response(CommonConstants.KF_SCUCESS, null, CommonConstants.KF_TRUNCATE_DATA_SCUCESS_MESSAGE);
 			} else if (tableName.equals(CommonConstants.PIR3_SCANOPCODEISSUE_TABLE)) {
 				pIR3_SCanOpcodeIssueRepository.deleteAll();
+				response = new Response(CommonConstants.KF_SCUCESS, null, CommonConstants.KF_TRUNCATE_DATA_SCUCESS_MESSAGE);
+			} else if (tableName.equals(CommonConstants.PIR4_SCANOPCODEISSUE_TABLE)) {
+				pIR4_SCanOpcodeIssueRepository.deleteAll();
 				response = new Response(CommonConstants.KF_SCUCESS, null, CommonConstants.KF_TRUNCATE_DATA_SCUCESS_MESSAGE);
 			}
 		} catch (Exception e) {
